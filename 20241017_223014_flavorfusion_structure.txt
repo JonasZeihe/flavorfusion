@@ -1,0 +1,96 @@
+flavorfusion/
+├── .gitignore
+├── .git/
+├── node_modules/
+├── public/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   │       ├── appstore/
+│   │       │   ├── QR/
+│   │       │   │   ├── QR_apple.svg
+│   │       │   │   └── QR_google.svg
+│   │       │   ├── Type=Default_apple.png
+│   │       │   ├── Type=Default_google.png
+│   │       │   ├── Type=Hover_apple.png
+│   │       │   └── Type=Hover_google.png
+│   │       ├── backgrounds/
+│   │       │   ├── BackgroundFlavourFusion.png
+│   │       │   ├── Property 1=BackgroundAfrika.png
+│   │       │   ├── Property 1=BackgroundAsien.png
+│   │       │   ├── Property 1=BackgroundLateinamerika.png
+│   │       │   ├── Property 1=BackgroundMediterran.png
+│   │       │   ├── Property 1=BackgroundNahost.png
+│   │       │   ├── Property 1=BackgroundNordamerika.png
+│   │       │   └── Property 1=BackgroundNordeuropa.png
+│   │       ├── cards/
+│   │       │   ├── Default=CardAfrika.png
+│   │       │   ├── Default=CardAsien.png
+│   │       │   ├── Default=CardLateinamerika.png
+│   │       │   ├── Default=CardMediterran.png
+│   │       │   ├── Default=CardNahost.png
+│   │       │   ├── Default=CardNordamerika.png
+│   │       │   └── Default=CardNordeuropa.png
+│   │       ├── cards_hover/
+│   │       │   ├── Hover=CardAfrika.png
+│   │       │   ├── Hover=CardAsien.png
+│   │       │   ├── Hover=CardLateinamerika.png
+│   │       │   ├── Hover=CardMediterran.png
+│   │       │   ├── Hover=CardNahost.png
+│   │       │   ├── Hover=CardNordamerika.png
+│   │       │   └── Hover=CardNordeuropa.png
+│   │       ├── fonts/
+│   │       └── logo/
+│   │           ├── logo.png
+│   │           └── logotext.png
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Accordion.js
+│   │   │   ├── BackgroundImage.js
+│   │   │   ├── Button.js
+│   │   │   ├── Card.js
+│   │   │   ├── Container.js
+│   │   │   ├── Footer.js
+│   │   │   ├── ImprintCard.js
+│   │   │   ├── PricingCard.js
+│   │   │   ├── TextBox.js
+│   │   │   └── Wrapper.js
+│   │   ├── screens/
+│   │   │   ├── Prototype1Flavourfusionscreen.js
+│   │   │   ├── Prototype2Pitch1screen.js
+│   │   │   ├── Prototype3Downloadscreen.js
+│   │   │   ├── Prototype4Cardscreen.js
+│   │   │   ├── Prototype5Pricingscreen.js
+│   │   │   ├── Prototype6Pitch2screen.js
+│   │   │   ├── Prototype7Faqscreen.js
+│   │   │   └── Prototype8Imprintscreen.js
+│   │   └── text/
+│   │       ├── Heading.js
+│   │       └── Paragraph.js
+│   ├── pages/
+│   │   ├── CaseStudyPage.js
+│   │   ├── HomePage.js
+│   │   └── LandingPage.js
+│   ├── styles/
+│   │   └── GlobalStyles.js
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── .gitignore
+├── flavorfusion.code-workspace
+├── package-lock.json
+├── package.json
+├── README.md
+├── run_flavorfusion.bat
+└── skryper_2024-10-11_20-05-09 .exe

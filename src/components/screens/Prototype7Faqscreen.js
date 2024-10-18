@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import FaqAccordion from "../layout/Accordion"; // Die bereits erstellte Accordion-Komponente
-import BackgroundImage from "../../assets/images/backgrounds/Property 1=BackgroundAfrika.png"; // Fixed path
+import FaqAccordion from "../layout/Accordion";
+import BackgroundImage from "../../assets/images/backgrounds/BackgroundAfrika.png";
 
 const ScreenWrapper = styled.div`
   background-color: #ffffff;

@@ -1,66 +1,72 @@
 import React from "react";
 import styled from "styled-components";
-import BackgroundImage from "../../assets/images/backgrounds/Property 1=BackgroundMediterran.png";
+import BackgroundImage from "../../assets/images/backgrounds/BackgroundMediterran.png";
 import Button from "../layout/Button";
+import Heading from "../text/Heading";
+import Paragraph from "../text/Paragraph";
+import Container from "../layout/Container";
 
 const ScreenWrapper = styled.div`
-  background-color: #ffffff;
+  background-color: var(--neutral1);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100vh;
   background-image: url(${BackgroundImage});
   background-size: cover;
   background-position: center;
+  position: relative;
 `;
 
-const TextWrapper = styled.div`
-  text-align: center;
-  color: #fff;
-  margin-bottom: 3rem;
-  max-width: 700px;
-
-  h1 {
-    font-family: "Poppins", sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-  }
-
-  p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    margin-top: 1rem;
-  }
-`;
-
-const CTAButton = styled(Button)`
-  background-color: var(--accent-colorsaccent-3);
-  padding: 1rem 2rem;
-  font-size: 1.25rem;
-  color: #fff;
+const TextOverlay = styled.div`
+  background-color: rgba(255, 193, 7, 0.85); /* Gelber Block mit Transparenz */
+  padding: 3rem;
   border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  max-width: 800px; /* Maximale Breite für die Textbox */
 `;
 
-const Prototype2Pitch1screen = () => {
+const CTAButtonWrapper = styled.div`
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+`;
+
+const Prototype2PitchScreen = () => {
   return (
     <ScreenWrapper>
-      <TextWrapper>
-        <h1>Deine Koch-Revolution</h1>
-        <p>
-          FlavorFusion vereinfacht deinen Alltag in der Küche. Du erhältst
-          Rezeptvorschläge, die deinem Geschmack und deinen
-          Ernährungsbedürfnissen entsprechen. Starte deine kulinarische
-          Entdeckungsreise – ganz ohne Einkaufsstress.
-        </p>
-      </TextWrapper>
-      <CTAButton text="Kostenlos starten" />
+      <Container>
+        <TextOverlay>
+          <Heading
+            size="var(--fontSizeHeadline3)"
+            color="var(--neutral1)"
+            align="left"
+          >
+            Dein Kochassistent für Zuhause –
+          </Heading>
+          <Paragraph
+            size="var(--fontSizeBody)"
+            color="var(--neutral1)"
+            align="left"
+            margin="1.5rem 0"
+          >
+            Entdecke einfache, personalisierte Rezepte und erhalte
+            maßgeschneiderte Einkaufslisten. Für stressfreies Kochen und mehr
+            Genuss.
+          </Paragraph>
+        </TextOverlay>
+      </Container>
+      <CTAButtonWrapper>
+        <Button
+          text="Du hast noch Fragen?"
+          bgColor="var(--secondary3)"
+          fontSize="var(--fontSizeButton)"
+          padding="1rem 2rem"
+        />
+      </CTAButtonWrapper>
     </ScreenWrapper>
   );
 };
 
-export default Prototype2Pitch1screen;
+export default Prototype2PitchScreen;

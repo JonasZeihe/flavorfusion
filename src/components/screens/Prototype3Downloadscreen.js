@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import AppStoreLogoDefault from "../../assets/images/appstore/Type=Default_apple.png";
-import AppStoreLogoHover from "../../assets/images/appstore/Type=Hover_apple.png";
-import GooglePlayLogoDefault from "../../assets/images/appstore/Type=Default_google.png";
-import GooglePlayLogoHover from "../../assets/images/appstore/Type=Hover_google.png";
+import AppStoreLogoDefault from "../../assets/images/appstore/Default_apple.png";
+import AppStoreLogoHover from "../../assets/images/appstore/Hover_apple.png";
+import GooglePlayLogoDefault from "../../assets/images/appstore/Default_google.png";
+import GooglePlayLogoHover from "../../assets/images/appstore/Hover_google.png";
 import QRCodeGoogle from "../../assets/images/appstore/QR/QR_google.svg";
 import QRCodeApple from "../../assets/images/appstore/QR/QR_apple.svg";
-import BackgroundImage from "../../assets/images/backgrounds/Property 1=BackgroundAsien.png";
+import BackgroundImage from "../../assets/images/backgrounds/BackgroundAsien.png";
 
 const ScreenWrapper = styled.div`
   background-image: url(${BackgroundImage});
@@ -51,13 +51,14 @@ const DownloadBlock = styled.div`
 const QRCode = styled.img`
   width: 10rem;
   height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Etwas mehr Abstand zwischen QR-Code und Text */
 `;
 
 const DownloadText = styled.p`
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   color: #fff;
+  margin-top: -0.5rem; /* Optionaler negativer Abstand für engere Optik */
 `;
 
 const Prototype3Downloadscreen = () => {

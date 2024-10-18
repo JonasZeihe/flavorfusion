@@ -1,24 +1,37 @@
 import React from "react";
 import styled from "styled-components";
-import CardMediterran from "../../assets/images/cards/Default=CardMediterran.png";
-import CardMediterranHover from "../../assets/images/cards_hover/Hover=CardMediterran.png";
-import CardAsien from "../../assets/images/cards/Default=CardAsien.png";
-import CardAsienHover from "../../assets/images/cards_hover/Hover=CardAsien.png";
-import CardLateinamerika from "../../assets/images/cards/Default=CardLateinamerika.png";
-import CardLateinamerikaHover from "../../assets/images/cards_hover/Hover=CardLateinamerika.png";
-import CardNahost from "../../assets/images/cards/Default=CardNahost.png";
-import CardNahostHover from "../../assets/images/cards_hover/Hover=CardNahost.png";
-import CardAfrika from "../../assets/images/cards/Default=CardAfrika.png";
-import CardAfrikaHover from "../../assets/images/cards_hover/Hover=CardAfrika.png";
-import CardNordamerika from "../../assets/images/cards/Default=CardNordamerika.png";
-import CardNordamerikaHover from "../../assets/images/cards_hover/Hover=CardNordamerika.png";
-import CardNordeuropa from "../../assets/images/cards/Default=CardNordeuropa.png"; // Nordeuropa hinzugefügt
-import CardNordeuropaHover from "../../assets/images/cards_hover/Hover=CardNordeuropa.png"; // Nordeuropa Hover hinzugefügt
-import BackgroundImage from "../../assets/images/backgrounds/Property 1=BackgroundLateinamerika.png";
+import CardMediterran from "../../assets/images/cards/CardMediterran.png";
+import CardMediterranHover from "../../assets/images/cards_hover/Hover_CardMediterran.png";
+import CardAsien from "../../assets/images/cards/CardAsien.png";
+import CardAsienHover from "../../assets/images/cards_hover/Hover_CardAsien.png";
+import CardLateinamerika from "../../assets/images/cards/CardLateinamerika.png";
+import CardLateinamerikaHover from "../../assets/images/cards_hover/Hover_CardLateinamerika.png";
+import CardNahost from "../../assets/images/cards/CardNahost.png";
+import CardNahostHover from "../../assets/images/cards_hover/Hover_CardNahost.png";
+import CardAfrika from "../../assets/images/cards/CardAfrika.png";
+import CardAfrikaHover from "../../assets/images/cards_hover/Hover_CardAfrika.png";
+import CardNordamerika from "../../assets/images/cards/CardNordamerika.png";
+import CardNordamerikaHover from "../../assets/images/cards_hover/Hover_CardNordamerika.png";
+import CardNordeuropa from "../../assets/images/cards/CardNordeuropa.png";
+import CardNordeuropaHover from "../../assets/images/cards_hover/Hover_CardNordeuropa.png";
+import BackgroundImage from "../../assets/images/backgrounds/BackgroundLateinamerika.png";
 import Button from "../layout/Button";
 
+const Background = styled.div`
+  background-image: url(${BackgroundImage});
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Blur-Effekt nur für den Hintergrund */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Hintergrund bleibt hinter dem Inhalt */
+`;
+
 const ScreenWrapper = styled.div`
-  background-color: #ffffff;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,10 +39,6 @@ const ScreenWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
   padding: 2rem;
-  background-image: url(${BackgroundImage});
-  background-size: cover;
-  background-position: center;
-  filter: blur(5px); /* Blur-Effekt */
 `;
 
 const CardsWrapper = styled.div`
@@ -40,7 +49,7 @@ const CardsWrapper = styled.div`
   max-width: 1200px;
   padding: 2rem;
   position: relative;
-  z-index: 2; /* Damit die Karten über dem Hintergrund-Blur angezeigt werden */
+  z-index: 2; /* Karten über dem Hintergrund */
 `;
 
 const CardItem = styled.div`
@@ -48,7 +57,7 @@ const CardItem = styled.div`
   height: 452px;
   border-radius: 15px;
   border: 2px solid var(--neutral-colorsneutral-1);
-  background-image: url(${(props) => props.defaultImage});
+  background-image: url(${(props) => props.mage});
   background-size: cover;
   transition: background-image 0.3s ease-in-out;
 
@@ -65,26 +74,19 @@ const ButtonWrapper = styled.div`
 const Prototype4Cardscreen = () => {
   return (
     <ScreenWrapper>
+      <Background />
+
       <CardsWrapper>
+        <CardItem mage={CardMediterran} hoverImage={CardMediterranHover} />
+        <CardItem mage={CardAsien} hoverImage={CardAsienHover} />
         <CardItem
-          defaultImage={CardMediterran}
-          hoverImage={CardMediterranHover}
-        />
-        <CardItem defaultImage={CardAsien} hoverImage={CardAsienHover} />
-        <CardItem
-          defaultImage={CardLateinamerika}
+          mage={CardLateinamerika}
           hoverImage={CardLateinamerikaHover}
         />
-        <CardItem defaultImage={CardNahost} hoverImage={CardNahostHover} />
-        <CardItem defaultImage={CardAfrika} hoverImage={CardAfrikaHover} />
-        <CardItem
-          defaultImage={CardNordeuropa}
-          hoverImage={CardNordeuropaHover}
-        />
-        <CardItem
-          defaultImage={CardNordamerika}
-          hoverImage={CardNordamerikaHover}
-        />
+        <CardItem mage={CardNahost} hoverImage={CardNahostHover} />
+        <CardItem mage={CardAfrika} hoverImage={CardAfrikaHover} />
+        <CardItem mage={CardNordeuropa} hoverImage={CardNordeuropaHover} />
+        <CardItem mage={CardNordamerika} hoverImage={CardNordamerikaHover} />
       </CardsWrapper>
       <ButtonWrapper>
         <Button text="Entdecke noch mehr Flavour" />

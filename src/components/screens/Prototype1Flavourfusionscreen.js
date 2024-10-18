@@ -19,85 +19,61 @@ const ScreenWrapper = styled.div`
   position: relative;
 `;
 
-const LogoWrapper = styled.div`
-  position: relative;
+const LogoContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 20rem;
-  height: 20rem;
-  margin-bottom: 3rem;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.3
-  ); /* Optionaler Hintergrund für Blending */
-  border-radius: 50%; /* Kreisform */
-  overflow: hidden;
+  justify-content: center;
+  margin-bottom: 2rem;
+  z-index: 2;
 `;
 
 const LogoImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  mix-blend-mode: multiply; /* Blending-Effekt */
+  width: 20rem; /* Größe des Hauptlogos */
+  height: auto;
+  object-fit: contain;
 `;
 
 const LogoTextImage = styled.img`
-  position: absolute;
-  width: 15rem;
+  width: 30rem; /* Größe des Logotextes */
   height: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  object-fit: contain;
+  margin-top: -2rem; /* Optional: Leichter negativer Abstand für engeres Layout */
 `;
 
-const TextWrapper = styled.div`
-  text-align: center;
-  color: #fff;
-  margin-bottom: 3rem;
-  max-width: 600px;
-
-  h1 {
-    font-family: "Poppins", sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-  }
-
-  p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    margin-top: 1rem;
-  }
+const CTAButtonWrapper = styled.div`
+  margin-top: 2rem;
+  z-index: 3;
 `;
 
 const CTAButton = styled(Button)`
-  background-color: var(--accent-colorsaccent-3);
-  padding: 1rem 2rem;
-  font-size: 1.25rem;
+  background-color: #ff5722;
+  padding: 1.75rem 3.5rem;
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #e64a19; /* Hover-Farbe */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Hover-Schatten */
+  }
 `;
 
 const Prototype1FlavourFusionScreen = () => {
   return (
     <ScreenWrapper>
-      <LogoWrapper>
+      <LogoContainer>
         <LogoImage src={Logo} alt="Flavor Fusion Logo" />
-        <LogoTextImage src={LogoText} alt="Flavor Fusion Text" />
-      </LogoWrapper>
-      <TextWrapper>
-        <h1>Willkommen bei FlavorFusion</h1>
-        <p>
-          Deine kulinarische Entdeckungsreise beginnt hier! Entdecke neue
-          Geschmackswelten und lasse dich von uns inspirieren.
-        </p>
-      </TextWrapper>
-      <CTAButton text="Kostenlos starten" />
+        <LogoTextImage src={LogoText} alt="Flavor Fusion Text Logo" />
+      </LogoContainer>
+      <CTAButtonWrapper>
+        <CTAButton>Jetzt herunterladen und loskochen</CTAButton>
+      </CTAButtonWrapper>
     </ScreenWrapper>
   );
 };

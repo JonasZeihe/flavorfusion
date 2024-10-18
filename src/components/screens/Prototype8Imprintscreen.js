@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BackgroundImage from "../../assets/images/backgrounds/Property 1=BackgroundNordeuropa.png";
+import BackgroundImage from "../../assets/images/backgrounds/BackgroundNordeuropa.png";
 
 const ScreenWrapper = styled.div`
   background-color: #ffffff;

@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import Heading from "../text/Heading";
-import Paragraph from "../text/Paragraph";
-import Button from "../layout/Button";
-import { theme } from "../../styles/GlobalStyles";
+import React from 'react'
+import styled from 'styled-components'
+import Heading from '../text/Heading'
+import Paragraph from '../text/Paragraph'
+import Button from '../layout/Button'
+import theme from '../../styles/theme'
 
 const CardContainer = styled.div`
-  width: ${(props) => props.width || "100%"};
+  width: ${(props) => props.width || '100%'};
   max-width: 467px;
-  height: ${(props) => props.height || "auto"};
+  height: ${(props) => props.height || 'auto'};
   background-color: ${theme.colors.neutral5};
   border-radius: 10px;
   padding: 20px;
@@ -18,18 +18,18 @@ const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-`;
+`
 
 const FeatureList = styled.ul`
   color: white;
   margin-top: 20px;
   list-style-type: none;
   padding-left: 0;
-`;
+`
 
 const FeatureItem = styled.li`
   margin-bottom: 10px;
-`;
+`
 
 const PricingCard = ({
   planName,
@@ -65,7 +65,7 @@ const PricingCard = ({
       </FeatureList>
       <Button text={buttonText} customStyles={buttonStyles} />
     </CardContainer>
-  );
-};
+  )
+}
 
-export default PricingCard;
+export default PricingCard

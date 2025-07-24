@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import BackgroundImage from "../../assets/images/backgrounds/BackgroundNordamerika.png";
-import PricingCard from "../layout/PricingCard";
-import { theme } from "../../styles/GlobalStyles";
+import React from 'react'
+import styled from 'styled-components'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundNordamerika.png'
+import PricingCard from '../layout/PricingCard'
+import theme from '../../styles/theme'
 
 const ScreenWrapper = styled.div`
   background-color: #ffffff;
@@ -16,7 +16,7 @@ const ScreenWrapper = styled.div`
   background-size: cover;
   background-position: center;
   padding: 2rem;
-`;
+`
 
 const CardsWrapper = styled.div`
   display: grid;
@@ -25,51 +25,51 @@ const CardsWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   padding: 2rem;
-`;
+`
 
 const pricingPlans = [
   {
-    planName: "Free Plan",
-    description: "Für Einsteiger und Hobbyköche",
-    price: "Kostenlos",
+    planName: 'Free Plan',
+    description: 'Für Einsteiger und Hobbyköche',
+    price: 'Kostenlos',
     features: [
-      "Zugriff auf tausende Rezepte",
-      "Personalisierte Empfehlungen",
-      "Integrierte Einkaufsliste",
-      "Offline speichern (bis zu 10 Rezepte)",
-      "Werbung (dezente Banner)",
+      'Zugriff auf tausende Rezepte',
+      'Personalisierte Empfehlungen',
+      'Integrierte Einkaufsliste',
+      'Offline speichern (bis zu 10 Rezepte)',
+      'Werbung (dezente Banner)',
     ],
-    buttonText: "Kostenlos starten",
+    buttonText: 'Kostenlos starten',
     buttonStyles: `background-color: ${theme.colors.accent3}; color: white;`,
   },
   {
-    planName: "Pro Plan",
-    description: "Für ambitionierte Köche und Genießer",
-    price: "9,99 €/Monat",
+    planName: 'Pro Plan',
+    description: 'Für ambitionierte Köche und Genießer',
+    price: '9,99 €/Monat',
     features: [
-      "Werbefrei",
-      "Exklusive Premium-Rezepte",
-      "Unbegrenzter Offline-Zugriff",
-      "Schritt-für-Schritt-Anleitungen",
-      "Ernährungspläne und erweiterte Einkaufslisten",
+      'Werbefrei',
+      'Exklusive Premium-Rezepte',
+      'Unbegrenzter Offline-Zugriff',
+      'Schritt-für-Schritt-Anleitungen',
+      'Ernährungspläne und erweiterte Einkaufslisten',
     ],
-    buttonText: "Jetzt upgraden",
+    buttonText: 'Jetzt upgraden',
     buttonStyles: `background-color: ${theme.colors.accent3}; color: white;`,
   },
   {
-    planName: "Business Plan",
-    description: "Für Creator, Food-Blogger & Unternehmen",
-    price: "29,99 €/Monat",
+    planName: 'Business Plan',
+    description: 'Für Creator, Food-Blogger & Unternehmen',
+    price: '29,99 €/Monat',
     features: [
-      "Rezepte veröffentlichen und Branding hinzufügen",
-      "Analytik-Dashboard für Rezept-Performance",
-      "Community-Management-Tools",
-      "Team-Funktion für Zusammenarbeit",
+      'Rezepte veröffentlichen und Branding hinzufügen',
+      'Analytik-Dashboard für Rezept-Performance',
+      'Community-Management-Tools',
+      'Team-Funktion für Zusammenarbeit',
     ],
-    buttonText: "Für Creator und Unternehmen",
+    buttonText: 'Für Creator und Unternehmen',
     buttonStyles: `background-color: ${theme.colors.accent3}; color: white;`,
   },
-];
+]
 
 const Prototype5Pricingscreen = () => {
   return (
@@ -88,7 +88,7 @@ const Prototype5Pricingscreen = () => {
         ))}
       </CardsWrapper>
     </ScreenWrapper>
-  );
-};
+  )
+}
 
-export default Prototype5Pricingscreen;
+export default Prototype5Pricingscreen

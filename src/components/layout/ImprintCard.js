@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import Heading from "../text/Heading";
-import Paragraph from "../text/Paragraph";
-import { theme } from "../../styles/GlobalStyles";
+import React from 'react'
+import styled from 'styled-components'
+import Heading from '../text/Heading'
+import Paragraph from '../text/Paragraph'
+import theme from '../../styles/theme'
 
 const CardContainer = styled.div`
   width: 100%;
@@ -12,7 +12,7 @@ const CardContainer = styled.div`
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
   opacity: 0.9;
   margin-bottom: 20px;
-`;
+`
 
 const ImprintCard = ({ title, content }) => {
   return (
@@ -31,7 +31,7 @@ const ImprintCard = ({ title, content }) => {
         {content}
       </Paragraph>
     </CardContainer>
-  );
-};
+  )
+}
 
-export default ImprintCard;
+export default ImprintCard

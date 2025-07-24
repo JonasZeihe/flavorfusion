@@ -1,28 +1,37 @@
+// src/components/layout/Button.js
+
 import styled from 'styled-components'
-import theme from '../../styles/theme'
 
 const Button = styled.button`
-  background-color: ${(props) => props.bgColor || theme.colors.accent3};
-  border-radius: 8px;
+  background-color: ${({ bgColor, theme }) => bgColor || theme.colors.accent3};
+  border-radius: ${({ theme }) => theme.borderRadius.medium};
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: ${(props) => props.fontSize || '18px'};
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  padding: 12px 16px;
-  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.25);
-  width: ${(props) => props.width || 'auto'};
-  height: ${(props) => props.height || 'auto'};
+  color: #fff;
+  font-size: ${({ fontSize, theme }) =>
+    fontSize || theme.typography.fontSize.body};
+  font-family: ${({ theme }) => theme.typography.fontFamily.button};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
+  padding: ${({ theme }) => `${theme.spacing(1.5)} ${theme.spacing(2)}`};
+  box-shadow: ${({ theme }) => theme.boxShadow.sm};
+  width: ${({ width }) => width || 'auto'};
+  height: ${({ height }) => height || 'auto'};
   cursor: pointer;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+
   &:hover {
-    background-color: ${(props) => props.hoverColor || theme.colors.accent4};
+    background-color: ${({ hoverColor, theme }) =>
+      hoverColor || theme.colors.accent4};
+    box-shadow: ${({ theme }) => theme.boxShadow.md};
   }
   &:disabled {
-    background-color: ${(props) =>
-      props.disabledColor || theme.colors.neutral3};
+    background-color: ${({ disabledColor, theme }) =>
+      disabledColor || theme.colors.neutral3};
     cursor: not-allowed;
+    opacity: 0.6;
   }
 `
 

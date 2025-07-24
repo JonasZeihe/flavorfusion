@@ -1,37 +1,44 @@
 import React from 'react'
 import styled from 'styled-components'
-import Heading from '../text/Heading'
-import Paragraph from '../text/Paragraph'
 import theme from '../../styles/theme'
+import typography from '../../styles/typography'
 
 const CardContainer = styled.div`
   width: 100%;
-  background-color: ${(props) => props.bgColor || theme.colors.neutral5};
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+  background-color: ${({ bgColor }) => bgColor || theme.colors.neutral5};
+  padding: ${theme.spacing(2.5)};
+  border-radius: ${theme.borderRadius.medium};
+  box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
   opacity: 0.9;
-  margin-bottom: 20px;
+  margin-bottom: ${theme.spacing(2.5)};
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `
 
-const ImprintCard = ({ title, content }) => {
-  return (
-    <CardContainer>
-      <Heading
-        color={theme.colors.primary3}
-        size="24px"
-        customStyles="margin-bottom: 10px; text-align: left;"
-      >
-        {title}
-      </Heading>
-      <Paragraph
-        size="14px"
-        customStyles={`color: ${theme.colors.white}; line-height: 1.5;`}
-      >
-        {content}
-      </Paragraph>
-    </CardContainer>
-  )
-}
+const Title = styled.div`
+  color: ${theme.colors.primary3};
+  font-size: ${typography.fontSize.h3};
+  font-family: ${typography.fontFamily.primary};
+  font-weight: ${typography.fontWeight.bold};
+  margin-bottom: ${theme.spacing(1.25)};
+  text-align: left;
+`
+
+const Content = styled.div`
+  color: ${theme.colors.neutral1};
+  font-size: ${typography.fontSize.body};
+  font-family: ${typography.fontFamily.primary};
+  line-height: ${typography.lineHeight.normal};
+  text-align: left;
+  opacity: 0.95;
+`
+
+const ImprintCard = ({ title, content, bgColor }) => (
+  <CardContainer bgColor={bgColor}>
+    <Title>{title}</Title>
+    <Content>{content}</Content>
+  </CardContainer>
+)
 
 export default ImprintCard

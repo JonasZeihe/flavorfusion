@@ -1,18 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import Heading from '../text/Heading'
-import Paragraph from '../text/Paragraph'
-import Button from '../layout/Button'
 import theme from '../../styles/theme'
+import typography from '../../styles/typography'
+import Button from '../layout/Button'
 
 const CardContainer = styled.div`
-  width: ${(props) => props.width || '100%'};
+  width: ${({ width }) => width || '100%'};
   max-width: 467px;
-  height: ${(props) => props.height || 'auto'};
-  background-color: ${theme.colors.neutral5};
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.25);
+  height: ${({ height }) => height || 'auto'};
+  background: ${theme.colors.neutral5};
+  border-radius: ${theme.borderRadius.medium};
+  padding: ${theme.spacing(2.5)};
+  box-shadow: ${theme.boxShadow.md};
   opacity: 0.8;
   display: flex;
   flex-direction: column;
@@ -20,52 +19,67 @@ const CardContainer = styled.div`
   justify-content: space-between;
 `
 
+const Title = styled.div`
+  color: ${theme.colors.primary3};
+  font-size: ${typography.fontSize.h2};
+  font-family: ${typography.fontFamily.primary};
+  font-weight: ${typography.fontWeight.bold};
+  text-align: center;
+  margin-bottom: ${theme.spacing(1.5)};
+`
+
+const Price = styled.div`
+  color: ${theme.colors.neutral1};
+  font-size: ${typography.fontSize.h3};
+  font-family: ${typography.fontFamily.primary};
+  margin-top: ${theme.spacing(1)};
+  text-align: center;
+`
+
+const Description = styled.div`
+  color: ${theme.colors.neutral1};
+  font-size: ${typography.fontSize.body};
+  font-family: ${typography.fontFamily.primary};
+  margin-top: ${theme.spacing(1)};
+  margin-bottom: ${theme.spacing(1.5)};
+  text-align: center;
+`
+
 const FeatureList = styled.ul`
-  color: white;
-  margin-top: 20px;
-  list-style-type: none;
+  color: ${theme.colors.neutral1};
+  margin-top: ${theme.spacing(2)};
+  list-style: none;
   padding-left: 0;
+  font-size: ${typography.fontSize.body};
+  font-family: ${typography.fontFamily.primary};
 `
 
 const FeatureItem = styled.li`
-  margin-bottom: 10px;
+  margin-bottom: ${theme.spacing(1)};
 `
 
 const PricingCard = ({
   planName,
   description,
   price,
-  features,
+  features = [],
   buttonText,
   buttonStyles,
   width,
   height,
-}) => {
-  return (
-    <CardContainer width={width} height={height}>
-      <Heading color="white" size="36px" customStyles="text-align: center;">
-        {planName}
-      </Heading>
-      <Paragraph
-        size="18px"
-        customStyles="color: white; margin-top: 20px; text-align: center;"
-      >
-        {price}
-      </Paragraph>
-      <Paragraph
-        size="18px"
-        customStyles="color: white; margin-top: 10px; text-align: center;"
-      >
-        {description}
-      </Paragraph>
-      <FeatureList>
-        {features.map((feature, index) => (
-          <FeatureItem key={index}>{feature}</FeatureItem>
-        ))}
-      </FeatureList>
-      <Button text={buttonText} customStyles={buttonStyles} />
-    </CardContainer>
-  )
-}
+  ...rest
+}) => (
+  <CardContainer width={width} height={height} {...rest}>
+    <Title>{planName}</Title>
+    <Price>{price}</Price>
+    <Description>{description}</Description>
+    <FeatureList>
+      {features.map((feature, idx) => (
+        <FeatureItem key={idx}>{feature}</FeatureItem>
+      ))}
+    </FeatureList>
+    <Button style={buttonStyles}>{buttonText}</Button>
+  </CardContainer>
+)
 
 export default PricingCard

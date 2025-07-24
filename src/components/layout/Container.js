@@ -1,13 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Container = styled.div`
+const Container = styled.div`
   width: 100%;
-  max-width: ${(props) => props.maxWidth || "1200px"};
+  max-width: ${({ maxWidth, theme }) => maxWidth || theme.breakpoints.lg};
   margin: 0 auto;
-  padding: ${(props) => props.padding || "0 20px"};
+  padding: ${({ padding, theme }) => padding || `0 ${theme.spacing(2)}`};
   position: relative;
-  display: ${(props) => props.display || "block"};
-  ${(props) => props.customStyles};
-`;
+  display: ${({ display }) => display || 'block'};
+  ${({ customStyles }) => customStyles};
+`
 
-export default Container;
+export default Container

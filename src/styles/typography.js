@@ -1,36 +1,26 @@
 // src/styles/typography.js
 
-const typography = {
+const clamp = (min, max) =>
+  `clamp(${min}rem, calc(${min}rem + (${max} - ${min}) * ((100vw - 350px) / 1000)), ${max}rem)`
+
+export const typography = {
   fontFamily: {
-    base: "'Poppins', Arial, sans-serif",
-    heading: "'Poppins', Arial, sans-serif",
-    button: "'Montserrat', Arial, sans-serif",
-    secondary: "'Assistant', Arial, sans-serif",
-  },
-  fontWeight: {
-    regular: 400,
-    medium: 500,
-    bold: 700,
-    extrabold: 800,
+    primary: "'Poppins', sans-serif",
+    secondary: "'Montserrat', sans-serif",
+    body: "'Poppins', sans-serif",
+    button: "'Montserrat', sans-serif",
   },
   fontSize: {
-    h1: '3rem', // 48px
-    h2: '2.25rem', // 36px
-    h3: '1.5rem', // 24px
-    h4: '1.125rem', // 18px
-    body: '1.125rem', // 18px
-    small: '0.875rem', // 14px
-    button: '1.125rem', // 18px
+    h1: clamp(2.1, 2.85),
+    h2: clamp(1.6, 2.14),
+    h3: clamp(1.25, 1.44),
+    h4: clamp(1.08, 1.18),
+    body: clamp(1, 1.08),
+    small: clamp(0.92, 1),
   },
-  lineHeight: {
-    h1: 1.1,
-    h2: 1.2,
-    h3: 1.3,
-    h4: 1.4,
-    body: 1.5,
-    small: 1.4,
-    button: 1.33,
-  },
+  fontWeight: { light: 300, regular: 400, medium: 500, bold: 700 },
+  lineHeight: { tight: 1.19, normal: 1.6, relaxed: 1.9 },
+  letterSpacing: { tight: '-0.012em', normal: '0', wide: '0.035em' },
 }
 
 export default typography

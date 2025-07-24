@@ -1,26 +1,49 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-/**
- * Simple Image component for rendering images in your case study screens.
- * @param {string} src - The source URL of the image.
- * @param {string} alt - The alt text for the image (for accessibility).
- * @param {string} className - Optional CSS classes for custom styling.
- */
-const Image = ({ src, alt, className }) => {
-  return <img src={src} alt={alt} className={className} />;
-};
+const StyledImage = styled.img`
+  max-width: 100%;
+  display: block;
+  object-fit: ${({ objectFit }) => objectFit || 'cover'};
+  border-radius: ${({ borderRadius }) => borderRadius || '0'};
+  ${({ customStyles }) => customStyles};
+`
 
-// PropTypes for basic type checking
+const Image = ({
+  src,
+  alt,
+  className,
+  objectFit,
+  borderRadius,
+  customStyles,
+}) => (
+  <StyledImage
+    src={src}
+    alt={alt}
+    className={className}
+    objectFit={objectFit}
+    borderRadius={borderRadius}
+    customStyles={customStyles}
+    loading="lazy"
+    draggable={false}
+  />
+)
+
 Image.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-};
+  objectFit: PropTypes.string,
+  borderRadius: PropTypes.string,
+  customStyles: PropTypes.string,
+}
 
-// Default props for optional values
 Image.defaultProps = {
-  className: "",
-};
+  className: '',
+  objectFit: undefined,
+  borderRadius: undefined,
+  customStyles: undefined,
+}
 
-export default Image;
+export default Image

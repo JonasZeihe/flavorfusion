@@ -1,10 +1,12 @@
-import styled from "styled-components";
+// src/components/layout/BackgroundImage.js
+
+import styled from 'styled-components'
 
 const BackgroundImage = styled.img`
-  width: ${(props) => props.width || "100%"};
-  height: ${(props) => props.height || "100%"};
-  object-fit: ${(props) => props.objectFit || "cover"};
-  ${(props) => props.customStyles};
-`;
+  width: ${({ width }) => width || '100%'};
+  height: ${({ height }) => height || '100%'};
+  object-fit: ${({ objectFit }) => objectFit || 'cover'};
+  ${({ customStyles }) => customStyles};
+`
 
-export default BackgroundImage;
+export default BackgroundImage

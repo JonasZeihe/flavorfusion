@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import BackgroundImage from "../../assets/images/backgrounds/BackgroundFlavourFusion.png";
-import Heading from "../text/Heading";
-import Paragraph from "../text/Paragraph";
-import Button from "../layout/Button";
+import React from 'react'
+import styled from 'styled-components'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundFlavourFusion.png'
+import Heading from '../text/Heading'
+import Paragraph from '../text/Paragraph'
+import Button from '../../components/layout/Button'
 
 // Wrapper für den gesamten Hero-Bereich
 const HeroWrapper = styled.div`
@@ -20,7 +20,7 @@ const HeroWrapper = styled.div`
   text-align: center;
   position: relative;
   color: var(--neutral6);
-`;
+`
 
 // Container für den Textinhalt
 const TextContainer = styled.div`
@@ -30,19 +30,19 @@ const TextContainer = styled.div`
   max-width: 800px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 2; /* Über dem Hintergrundbild */
-`;
+`
 
 // Projektinformationen
 const ProjectInfo = styled.div`
   margin-top: 2rem;
   text-align: left;
   font-size: 1.2rem;
-`;
+`
 
 // Call to Action Button
 const CTAButtonWrapper = styled.div`
   margin-top: 2rem;
-`;
+`
 
 const CaseStudyHeroScreen = () => {
   return (
@@ -85,7 +85,7 @@ const CaseStudyHeroScreen = () => {
         </CTAButtonWrapper>
       </TextContainer>
     </HeroWrapper>
-  );
-};
+  )
+}
 
-export default CaseStudyHeroScreen;
+export default CaseStudyHeroScreen

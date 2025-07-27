@@ -1,24 +1,21 @@
-import React from "react";
-import CaseStudyHeroScreen from "../components/screens/CaseStudyHeroScreen";
-import CaseStudyOverviewScreen from "../components/screens/CaseStudyOverviewScreen";
-import CaseStudyDiscoveryScreen from "../components/screens/CaseStudyDiscoveryScreen";
-import CaseStudyUXProcessScreen from "../components/screens/CaseStudyUXProcessScreen";
-import CaseStudyFinalDesignScreen from "../components/screens/CaseStudyFinalDesignScreen";
-import CaseStudyImpactScreen from "../components/screens/CaseStudyImpactScreen";
-import CaseStudyReflectionScreen from "../components/screens/CaseStudyReflectionScreen";
+import CaseStudyHeroScreen from './casestudy/CaseStudyHeroScreen'
+import CaseStudyOverviewScreen from './casestudy/CaseStudyOverviewScreen'
+import CaseStudyDiscoveryScreen from './casestudy/CaseStudyDiscoveryScreen'
+import CaseStudyUXProcessScreen from './casestudy/CaseStudyUXProcessScreen'
+import CaseStudyFinalDesignScreen from './casestudy/CaseStudyFinalDesignScreen'
+import CaseStudyImpactScreen from './casestudy/CaseStudyImpactScreen'
+import CaseStudyReflectionScreen from './casestudy/CaseStudyReflectionScreen'
 
-const CaseStudyPage = () => {
-  return (
-    <div>
-      <CaseStudyHeroScreen />
-      <CaseStudyOverviewScreen />
-      <CaseStudyDiscoveryScreen />
-      <CaseStudyUXProcessScreen />
-      <CaseStudyFinalDesignScreen />
-      <CaseStudyImpactScreen />
-      <CaseStudyReflectionScreen />
-    </div>
-  );
-};
+const screens = [
+  CaseStudyHeroScreen,
+  CaseStudyOverviewScreen,
+  CaseStudyDiscoveryScreen,
+  CaseStudyUXProcessScreen,
+  CaseStudyFinalDesignScreen,
+  CaseStudyImpactScreen,
+  CaseStudyReflectionScreen,
+]
 
-export default CaseStudyPage;
+const CaseStudyPage = () => screens.map((Screen, i) => <Screen key={i} />)
+
+export default CaseStudyPage

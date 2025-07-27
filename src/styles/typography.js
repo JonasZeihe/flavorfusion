@@ -1,26 +1,131 @@
-// src/styles/typography.js
+// src/components/typography/Typography.js
 
-const clamp = (min, max) =>
-  `clamp(${min}rem, calc(${min}rem + (${max} - ${min}) * ((100vw - 350px) / 1000)), ${max}rem)`
+import styled, { css } from 'styled-components'
 
-export const typography = {
-  fontFamily: {
-    primary: "'Poppins', sans-serif",
-    secondary: "'Montserrat', sans-serif",
-    body: "'Poppins', sans-serif",
-    button: "'Montserrat', sans-serif",
-  },
-  fontSize: {
-    h1: clamp(2.1, 2.85),
-    h2: clamp(1.6, 2.14),
-    h3: clamp(1.25, 1.44),
-    h4: clamp(1.08, 1.18),
-    body: clamp(1, 1.08),
-    small: clamp(0.92, 1),
-  },
-  fontWeight: { light: 300, regular: 400, medium: 500, bold: 700 },
-  lineHeight: { tight: 1.19, normal: 1.6, relaxed: 1.9 },
-  letterSpacing: { tight: '-0.012em', normal: '0', wide: '0.035em' },
+const TAG_MAP = {
+  display: 'h1',
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  subtitle: 'h4',
+  body: 'p',
+  bodyStrong: 'p',
+  caption: 'span',
+  captionStrong: 'span',
 }
 
-export default typography
+const variantStyles = {
+  display: (t) => css`
+    font-size: ${t.typography.fontSize.display};
+    font-weight: ${t.typography.fontWeight.black};
+    line-height: ${t.typography.lineHeight.tight};
+    letter-spacing: ${t.typography.letterSpacing.tighter};
+    color: ${t.colors.neutral.text};
+  `,
+  h1: (t) => css`
+    font-size: ${t.typography.fontSize.h1};
+    font-weight: ${t.typography.fontWeight.bold};
+    line-height: ${t.typography.lineHeight.tight};
+    letter-spacing: ${t.typography.letterSpacing.tight};
+    color: ${t.colors.neutral.text};
+  `,
+  h2: (t) => css`
+    font-size: ${t.typography.fontSize.h2};
+    font-weight: ${t.typography.fontWeight.bold};
+    line-height: ${t.typography.lineHeight.tight};
+    letter-spacing: ${t.typography.letterSpacing.tight};
+    color: ${t.colors.neutral.text};
+  `,
+  h3: (t) => css`
+    font-size: ${t.typography.fontSize.h3};
+    font-weight: ${t.typography.fontWeight.medium};
+    line-height: ${t.typography.lineHeight.normal};
+    letter-spacing: ${t.typography.letterSpacing.normal};
+    color: ${t.colors.neutral.text};
+  `,
+  subtitle: (t) => css`
+    font-size: ${t.typography.fontSize.subtitle};
+    font-weight: ${t.typography.fontWeight.medium};
+    line-height: ${t.typography.lineHeight.normal};
+    color: ${t.colors.neutral.text};
+  `,
+  body: (t) => css`
+    font-size: ${t.typography.fontSize.body};
+    font-weight: ${t.typography.fontWeight.regular};
+    line-height: ${t.typography.lineHeight.normal};
+    color: ${t.colors.neutral.text};
+  `,
+  bodyStrong: (t) => css`
+    font-size: ${t.typography.fontSize.body};
+    font-weight: ${t.typography.fontWeight.bold};
+    line-height: ${t.typography.lineHeight.normal};
+    color: ${t.colors.neutral.text};
+  `,
+  caption: (t) => css`
+    font-size: ${t.typography.fontSize.caption};
+    font-weight: ${t.typography.fontWeight.light};
+    line-height: ${t.typography.lineHeight.tight};
+    color: ${t.colors.neutral.text};
+  `,
+  captionStrong: (t) => css`
+    font-size: ${t.typography.fontSize.caption};
+    font-weight: ${t.typography.fontWeight.medium};
+    line-height: ${t.typography.lineHeight.tight};
+    color: ${t.colors.neutral.text};
+  `,
+}
+
+const getThemeColor = (color, theme) => {
+  if (!color) return null
+  const [group, tone = 'main'] = color.split('.')
+  return theme.colors[group]?.[tone] || null
+}
+
+const StyledTypography = styled.span`
+  margin: 0;
+  padding: 0;
+  text-align: ${({ align }) => align || 'left'};
+  ${({ variant = 'body', theme }) => variantStyles[variant]?.(theme)}
+
+  ${({ color, theme }) => {
+    const themeColor = getThemeColor(color, theme)
+    return themeColor
+      ? css`
+          color: ${themeColor};
+        `
+      : ''
+  }}
+  ${({ fontSize }) =>
+    fontSize &&
+    css`
+      font-size: ${fontSize};
+    `}
+`
+
+function Typography({
+  variant = 'body',
+  color,
+  align,
+  children,
+  as: asTagProp,
+  gutter = false,
+  fontSize,
+  ...rest
+}) {
+  const asTag = asTagProp || TAG_MAP[variant] || 'p'
+  return (
+    <StyledTypography
+      as={asTag}
+      variant={variant}
+      color={color}
+      align={align}
+      gutter={gutter}
+      fontSize={fontSize}
+      {...rest}
+    >
+      {children}
+    </StyledTypography>
+  )
+}
+
+export default Typography

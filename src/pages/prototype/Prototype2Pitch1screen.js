@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import BackgroundImage from "../../assets/images/backgrounds/BackgroundMediterran.png";
-import Button from "../layout/Button";
-import Heading from "../text/Heading";
-import Paragraph from "../text/Paragraph";
-import Container from "../layout/Container";
+import React from 'react'
+import styled from 'styled-components'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundMediterran.png'
+import Button from '../../components/layout/Button'
+import Heading from '../text/Heading'
+import Paragraph from '../text/Paragraph'
+import Container from '../../components/layout/Container'
 
 const ScreenWrapper = styled.div`
   background-color: var(--neutral1);
@@ -17,7 +17,7 @@ const ScreenWrapper = styled.div`
   background-size: cover;
   background-position: center;
   position: relative;
-`;
+`
 
 const TextOverlay = styled.div`
   background-color: rgba(255, 193, 7, 0.85); /* Gelber Block mit Transparenz */
@@ -25,13 +25,13 @@ const TextOverlay = styled.div`
   border-radius: 8px;
   text-align: left;
   max-width: 800px; /* Maximale Breite für die Textbox */
-`;
+`
 
 const CTAButtonWrapper = styled.div`
   position: absolute;
   bottom: 3rem;
   right: 3rem;
-`;
+`
 
 const Prototype2PitchScreen = () => {
   return (
@@ -66,7 +66,7 @@ const Prototype2PitchScreen = () => {
         />
       </CTAButtonWrapper>
     </ScreenWrapper>
-  );
-};
+  )
+}
 
-export default Prototype2PitchScreen;
+export default Prototype2PitchScreen

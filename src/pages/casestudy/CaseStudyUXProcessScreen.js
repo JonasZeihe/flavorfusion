@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import Heading from "../text/Heading";
-import Paragraph from "../text/Paragraph";
-import Image from "../layout/Image";
-import ColorGrid from "../../assets/images/casestudy/ColorGrid.png"; // Color Grid Bild
-import SketchWireframe from "../../assets/images/casestudy/mockupHanddrawn.png"; // Beispielbild für Wireframe
-import Farbschema from "../../assets/images/casestudy/TypoScreen.png"; // Beispiel für Farbpalette und Typo
-import PrototypePreview from "../../assets/images/casestudy/mockupLowFidelity.png"; // Beispiel für Prototyp
+import React from 'react'
+import styled from 'styled-components'
+import Heading from '../text/Heading'
+import Paragraph from '../text/Paragraph'
+import Image from '../../components/layout/Image'
+import ColorGrid from '../../assets/images/casestudy/ColorGrid.png' // Color Grid Bild
+import SketchWireframe from '../../assets/images/casestudy/mockupHanddrawn.png' // Beispielbild für Wireframe
+import Farbschema from '../../assets/images/casestudy/TypoScreen.png' // Beispiel für Farbpalette und Typo
+import PrototypePreview from '../../assets/images/casestudy/mockupLowFidelity.png' // Beispiel für Prototyp
 
 // Wrapper für den gesamten Abschnitt
 const UXProcessWrapper = styled.div`
@@ -18,7 +18,7 @@ const UXProcessWrapper = styled.div`
   padding: 4rem 2rem;
   text-align: center;
   min-height: 100vh;
-`;
+`
 
 // Container für den Textinhalt
 const TextContainer = styled.div`
@@ -28,19 +28,19 @@ const TextContainer = styled.div`
   max-width: 900px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: left;
-`;
+`
 
 // Abschnitts-Wrapper für jede Kategorie
 const Section = styled.div`
   margin-bottom: 2rem;
-`;
+`
 
 // Überschrift für Unterabschnitte
 const SectionHeading = styled.h3`
   font-size: var(--fontSizeHeadline4);
   color: var(--primary3);
   margin-bottom: 1rem;
-`;
+`
 
 const CaseStudyUXProcessScreen = () => {
   return (
@@ -86,13 +86,13 @@ const CaseStudyUXProcessScreen = () => {
         <Section>
           <SectionHeading>Interaktive Elemente</SectionHeading>
           <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-            Ein wichtiger Aspekt der Landing Page waren die{" "}
+            Ein wichtiger Aspekt der Landing Page waren die{' '}
             <strong>interaktiven Elemente</strong>. Ich habe ein klickbares
             Prototyp erstellt, der alle wesentlichen Funktionen enthält, wie zum
             Beispiel eine <strong>Download-Sektion</strong>, die die Nutzer
             direkt zur App-Installation führt. Call-to-Action-Buttons wurden
             klar positioniert, um die Nutzerführung zu erleichtern. Die
-            Download-Sektion wurde prominent platziert, begleitet von einem{" "}
+            Download-Sektion wurde prominent platziert, begleitet von einem{' '}
             <strong>visuellen Background</strong>, der die jeweilige Küche
             repräsentiert.
           </Paragraph>
@@ -100,7 +100,7 @@ const CaseStudyUXProcessScreen = () => {
         </Section>
       </TextContainer>
     </UXProcessWrapper>
-  );
-};
+  )
+}
 
-export default CaseStudyUXProcessScreen;
+export default CaseStudyUXProcessScreen

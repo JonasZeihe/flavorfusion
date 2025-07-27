@@ -1,21 +1,21 @@
-import React from "react";
-import styled from "styled-components";
-import CardMediterran from "../../assets/images/cards/CardMediterran.png";
-import CardMediterranHover from "../../assets/images/cards_hover/Hover_CardMediterran.png";
-import CardAsien from "../../assets/images/cards/CardAsien.png";
-import CardAsienHover from "../../assets/images/cards_hover/Hover_CardAsien.png";
-import CardLateinamerika from "../../assets/images/cards/CardLateinamerika.png";
-import CardLateinamerikaHover from "../../assets/images/cards_hover/Hover_CardLateinamerika.png";
-import CardNahost from "../../assets/images/cards/CardNahost.png";
-import CardNahostHover from "../../assets/images/cards_hover/Hover_CardNahost.png";
-import CardAfrika from "../../assets/images/cards/CardAfrika.png";
-import CardAfrikaHover from "../../assets/images/cards_hover/Hover_CardAfrika.png";
-import CardNordamerika from "../../assets/images/cards/CardNordamerika.png";
-import CardNordamerikaHover from "../../assets/images/cards_hover/Hover_CardNordamerika.png";
-import CardNordeuropa from "../../assets/images/cards/CardNordeuropa.png";
-import CardNordeuropaHover from "../../assets/images/cards_hover/Hover_CardNordeuropa.png";
-import BackgroundImage from "../../assets/images/backgrounds/BackgroundLateinamerika.png";
-import Button from "../layout/Button";
+import React from 'react'
+import styled from 'styled-components'
+import CardMediterran from '../../assets/images/cards/CardMediterran.png'
+import CardMediterranHover from '../../assets/images/cards_hover/Hover_CardMediterran.png'
+import CardAsien from '../../assets/images/cards/CardAsien.png'
+import CardAsienHover from '../../assets/images/cards_hover/Hover_CardAsien.png'
+import CardLateinamerika from '../../assets/images/cards/CardLateinamerika.png'
+import CardLateinamerikaHover from '../../assets/images/cards_hover/Hover_CardLateinamerika.png'
+import CardNahost from '../../assets/images/cards/CardNahost.png'
+import CardNahostHover from '../../assets/images/cards_hover/Hover_CardNahost.png'
+import CardAfrika from '../../assets/images/cards/CardAfrika.png'
+import CardAfrikaHover from '../../assets/images/cards_hover/Hover_CardAfrika.png'
+import CardNordamerika from '../../assets/images/cards/CardNordamerika.png'
+import CardNordamerikaHover from '../../assets/images/cards_hover/Hover_CardNordamerika.png'
+import CardNordeuropa from '../../assets/images/cards/CardNordeuropa.png'
+import CardNordeuropaHover from '../../assets/images/cards_hover/Hover_CardNordeuropa.png'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundLateinamerika.png'
+import Button from '../../components/layout/Button'
 
 const Background = styled.div`
   background-image: url(${BackgroundImage});
@@ -28,7 +28,7 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1; /* Hintergrund bleibt hinter dem Inhalt */
-`;
+`
 
 const ScreenWrapper = styled.div`
   position: relative;
@@ -39,7 +39,7 @@ const ScreenWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
   padding: 2rem;
-`;
+`
 
 const CardsWrapper = styled.div`
   display: grid;
@@ -50,7 +50,7 @@ const CardsWrapper = styled.div`
   padding: 2rem;
   position: relative;
   z-index: 2; /* Karten über dem Hintergrund */
-`;
+`
 
 const CardItem = styled.div`
   width: 258px;
@@ -64,12 +64,12 @@ const CardItem = styled.div`
   &:hover {
     background-image: url(${(props) => props.hoverImage});
   }
-`;
+`
 
 const ButtonWrapper = styled.div`
   margin-top: 2rem;
   z-index: 2;
-`;
+`
 
 const Prototype4Cardscreen = () => {
   return (
@@ -92,7 +92,7 @@ const Prototype4Cardscreen = () => {
         <Button text="Entdecke noch mehr Flavour" />
       </ButtonWrapper>
     </ScreenWrapper>
-  );
-};
+  )
+}
 
-export default Prototype4Cardscreen;
+export default Prototype4Cardscreen

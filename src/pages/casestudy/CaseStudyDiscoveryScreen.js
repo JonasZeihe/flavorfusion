@@ -1,91 +1,83 @@
 // src/components/screens/CaseStudyDiscoveryScreen.js
 
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import Typography from '../typography/Typography'
-import Image from '../layout/Image'
+import Typography from '../../styles/typography'
+import Image from '../../components/Image'
+import Wrapper from '../../components/Wrapper'
+import Lightbox from '../../components/Lightbox'
 import ColorGrid from '../../assets/images/casestudy/ColorGrid.png'
 
-const Wrapper = styled.div`
-  background: ${({ theme }) => theme.colors.neutral.background};
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: ${({ theme }) => theme.spacing(6)} ${({ theme }) => theme.spacing(2)};
-`
-
-const Box = styled.div`
-  background: ${({ theme }) => theme.colors.neutral.background};
-  padding: ${({ theme }) => theme.spacing(4)};
-  border-radius: ${({ theme }) => theme.borderRadius.large};
-  max-width: 900px;
-  width: 100%;
-  box-shadow: ${({ theme }) => theme.boxShadow.card};
-`
-
 const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
   margin-bottom: ${({ theme }) => theme.spacing(4)};
 `
 
-const CaseStudyDiscoveryScreen = () => (
-  <Wrapper>
-    <Box>
-      <Typography variant="h2" align="center" gutter color="primary.main">
-        Entdeckungsphase (Task)
+const StyledImage = styled(Image)`
+  width: 100%;
+  border-radius: ${({ theme }) => theme.borderRadius.large};
+  margin-top: ${({ theme }) => theme.spacing(2)};
+  margin-bottom: ${({ theme }) => theme.spacing(4)};
+  cursor: zoom-in;
+`
+
+const CaseStudyDiscoveryScreen = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+
+  return (
+    <Wrapper>
+      <Typography variant="h1" color="primary.3" align="center">
+        Entdeckungsphase – Research & Struktur
       </Typography>
 
       <Section>
-        <Typography variant="h3" gutter color="primary.main">
-          Erster Schritt: ChatGPT und FigJam
-        </Typography>
-        <Typography>
-          Zunächst habe ich ChatGPT genutzt, um eine erste Struktur und Ideen
-          für das Projekt zu entwickeln. Wie in meinen vorherigen Projekten habe
-          ich auch hier <strong>FigJam</strong> verwendet, um ein Arbeitsfile zu
-          erstellen. Dieses beinhaltete Links zu den Projektdateien und ein
-          Moodboard, das zentrale <strong>Design-Prinzipien</strong> wie Farben,
-          Zielorientierung und kulturelle Einflüsse festhielt.
+        <Typography variant="h2">Initiale Strukturierung mit KI</Typography>
+        <Typography variant="body">
+          Die ersten Impulse für Struktur, Themen und visuelle Sprache
+          entstanden in einem kollaborativen Prozess mit ChatGPT. Parallel
+          nutzte ich FigJam als zentrales Planungstool: Moodboard,
+          File-Verlinkungen, Designprinzipien und erste Flavour-Cluster wurden
+          dort visuell organisiert.
         </Typography>
       </Section>
 
-      <Image
+      <StyledImage
         src={ColorGrid}
-        alt="Moodboard und Design-Prinzipien"
-        style={{
-          width: '100%',
-          borderRadius: '1rem',
-          marginTop: '1rem',
-          marginBottom: '2.5rem',
-        }}
+        alt="Moodboard mit Flavour-Farbcodes"
+        onClick={() => setLightboxOpen(true)}
       />
 
+      {lightboxOpen && (
+        <Lightbox
+          src={ColorGrid}
+          alt="Moodboard mit Flavour-Farbcodes"
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
+
       <Section>
-        <Typography variant="h3" gutter color="primary.main">
-          Projektstruktur und Inhalte
-        </Typography>
-        <Typography>
-          In FigJam habe ich die Informationsarchitektur, Wireframes und das
-          Moodboard zentral gesammelt, bevor ich in Figma die Landing Page
-          gestaltete. Für jede Weltküche definierte ich eigene Kategorien und
-          Inhalte – von typischen Gerichten bis hin zu passenden Farbpaletten,
-          die später ins Design einflossen.
+        <Typography variant="h2">Struktur & semantische Ordnung</Typography>
+        <Typography variant="body">
+          Auf Basis des Moodboards entstanden erste semantische Kategorien je
+          Weltküche – darunter Gerichte, visuelle Codierung und emotionale
+          Trigger. Diese Inhalte wurden anschließend systematisch in Figma
+          überführt und bildeten die Grundlage für spätere Layout- und
+          Komponentensysteme.
         </Typography>
       </Section>
 
       <Section>
-        <Typography variant="h3" gutter color="primary.main">
-          Definition der Kategorien (Weltküchen)
+        <Typography variant="h2">Weltküchen als modulare Flavours</Typography>
+        <Typography variant="body">
+          In einem kuratierten Notion-File definierte ich sieben Weltküchen mit
+          je eigener visueller Sprache. Jede Flavour wurde als
+          kulturell-emotionale Modulidentität angelegt – inklusive Farbwelt,
+          Charakteristik, Gerichten und mentalen Assoziationen.
         </Typography>
-        <Typography gutter>
-          Gemeinsam mit ChatGPT habe ich sieben <strong>Weltküchen</strong> als
-          "Flavours" definiert: Mediterran, Asiatisch, Lateinamerikanisch,
-          Nordamerikanisch, Afrikanisch, Nordeuropäisch und Nahöstlich. Jede
-          erhielt eine eigene visuelle Sprache und Farbpalette, dokumentiert in
-          einem strukturierten Notion-File.
-        </Typography>
-        <Typography>
-          <strong>Beispiel: Mediterrane Küche</strong>
+        <Typography variant="captionStrong">
+          Beispiel: Mediterrane Küche
           <br />
           <strong>Charakteristik:</strong> Leicht, frisch, gesund
           <br />
@@ -94,12 +86,11 @@ const CaseStudyDiscoveryScreen = () => (
           <strong>Farbpalette:</strong> Olivgrün, Zitronengelb, Meeresblau,
           Terrakotta
           <br />
-          <strong>Emotionale Assoziation:</strong> Urlaub am Mittelmeer,
-          Lebensfreude
+          <strong>Assoziation:</strong> Urlaub am Mittelmeer, Lebensfreude
         </Typography>
       </Section>
-    </Box>
-  </Wrapper>
-)
+    </Wrapper>
+  )
+}
 
 export default CaseStudyDiscoveryScreen

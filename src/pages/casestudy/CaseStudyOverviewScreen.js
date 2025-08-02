@@ -1,102 +1,91 @@
-import React from "react";
-import styled from "styled-components";
-import Heading from "../text/Heading";
-import Paragraph from "../text/Paragraph";
-import BackgroundImage from "../../assets/images/backgrounds/BackgroundAsien.png"; // Beispiel Hintergrundbild
+// src/pages/casestudy/CaseStudyOverviewScreen.js
 
-// Wrapper für den gesamten Abschnitt
-const OverviewWrapper = styled.div`
+import React from 'react'
+import styled from 'styled-components'
+import Typography from '../../styles/typography'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundAsien.png'
+
+const Wrapper = styled.section`
   background-image: url(${BackgroundImage});
   background-size: cover;
   background-position: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
-  text-align: center;
-  color: var(--neutral6);
+  padding: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)};
   min-height: 100vh;
-`;
+`
 
-// Container für den Textinhalt
-const TextContainer = styled.div`
-  background: rgba(255, 255, 255, 0.85); /* Leicht transparente Box */
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  z-index: 2;
-`;
+const Content = styled.div`
+  background: rgba(255, 255, 255, 0.88);
+  padding: ${({ theme }) => theme.spacing(5)};
+  border-radius: ${({ theme }) => theme.borderRadius.medium};
+  max-width: 940px;
+  box-shadow: ${({ theme }) => theme.boxShadow.modal};
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(5)};
+`
 
-// Überschrift für Abschnitte (Produktbeschreibung, Problemstellung, etc.)
-const SectionHeading = styled.h3`
-  font-size: var(--fontSizeHeadline4);
-  color: var(--primary3);
-  margin-bottom: 1rem;
-`;
-
-// Abschnitts-Wrapper für jede einzelne Kategorie
 const Section = styled.div`
-  margin-bottom: 2rem;
-`;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
+`
 
 const CaseStudyOverviewScreen = () => {
   return (
-    <OverviewWrapper>
-      <TextContainer>
-        <Heading size="var(--fontSizeHeadline3)" color="var(--primary3)">
-          Projektüberblick (Situation)
-        </Heading>
+    <Wrapper>
+      <Content>
+        <Typography variant="h1" color="primary.3">
+          Projektüberblick – Kontext & Zielsetzung
+        </Typography>
 
-        {/* Produktbeschreibung */}
         <Section>
-          <SectionHeading>Produktbeschreibung</SectionHeading>
-          <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-            FlavorFusion ist eine Rezept-App, die Nutzern hilft, verschiedene
-            Weltküchen zu erkunden und personalisierte Empfehlungen zu erhalten.
-            Die App bietet einfache Einkaufslistsen und eine große Sammlung von
-            Rezepten aus Küchen wie der mediterranen, asiatischen,
-            lateinamerikanischen und weiteren. Das Projektziel war es, die
-            Vielfalt und Kreativität der App durch eine Landing Page zu
-            vermitteln.
-          </Paragraph>
+          <Typography variant="h2">Produktbeschreibung</Typography>
+          <Typography variant="body">
+            FlavorFusion ist ein KI-inspiriertes UX/UI-Projekt, das als Konzept
+            einer Rezept-App konzipiert wurde. Die App soll es Nutzer:innen
+            ermöglichen, kulinarische Weltküchen zu entdecken – von mediterran
+            über asiatisch bis lateinamerikanisch – und dabei personalisierte
+            Rezepte und passende Einkaufslistsen erhalten.
+          </Typography>
         </Section>
 
-        {/* Problemstellung */}
         <Section>
-          <SectionHeading>Problemstellung</SectionHeading>
-          <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-            Die Herausforderung bestand darin, eine Landing Page zu entwickeln,
-            die die kulturelle Vielfalt der App verständlich darstellt und
-            gleichzeitig visuell ansprechend ist. Die Seite musste außerdem klar
-            und intuitiv sein, um Nutzer dazu zu bringen, die App
-            herunterzuladen.
-          </Paragraph>
+          <Typography variant="h2">Problemstellung</Typography>
+          <Typography variant="body">
+            Die Herausforderung bestand darin, kulturelle Vielfalt als
+            strukturiertes, emotional zugängliches Interface zu gestalten. Ziel
+            war es, die visuelle Überforderung klassischer Rezeptseiten zu
+            vermeiden und stattdessen eine modulare, visuell klare Landing Page
+            zu entwickeln, die zum App-Download motiviert – ohne erklärlastige
+            Textwüsten oder generische UI-Muster.
+          </Typography>
         </Section>
 
-        {/* Zielgruppe */}
         <Section>
-          <SectionHeading>Zielgruppe</SectionHeading>
-          <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-            Kochbegeisterte, die neue Rezepte aus verschiedenen Kulturen
-            ausprobieren und ihre Kochfähigkeiten erweitern möchten.
-          </Paragraph>
+          <Typography variant="h2">Zielgruppe</Typography>
+          <Typography variant="body">
+            Digital affine Hobbyköch:innen und Food-Enthusiast:innen mit
+            Interesse an internationalen Rezepten, visuellem Storytelling und
+            neuen Geschmackswelten.
+          </Typography>
         </Section>
 
-        {/* Meine Rolle */}
         <Section>
-          <SectionHeading>Meine Rolle</SectionHeading>
-          <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-            Ich habe alle Designaspekte eigenständig übernommen – von der
-            initialen Ideengenerierung bis zur finalen Umsetzung der
-            interaktiven Landing Page.
-          </Paragraph>
+          <Typography variant="h2">Meine Rolle</Typography>
+          <Typography variant="body">
+            Ich war für den gesamten Designprozess verantwortlich – von der
+            semantischen Konzeption über visuelle Kodierung bis hin zu Prototyp,
+            UI-System und Case Study. Zusätzlich habe ich sämtliche Texte,
+            Prompts und KI-basierte Inhalte selbst erstellt und kuratiert.
+          </Typography>
         </Section>
-      </TextContainer>
-    </OverviewWrapper>
-  );
-};
+      </Content>
+    </Wrapper>
+  )
+}
 
-export default CaseStudyOverviewScreen;
+export default CaseStudyOverviewScreen

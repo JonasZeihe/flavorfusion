@@ -1,4 +1,4 @@
-// src/components/layout/Accordion.js
+// src/components/Accordion.js
 
 import React, { useState } from 'react'
 import styled from 'styled-components'

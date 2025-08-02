@@ -15,7 +15,7 @@ import CardNordamerikaHover from '../../assets/images/cards_hover/Hover_CardNord
 import CardNordeuropa from '../../assets/images/cards/CardNordeuropa.png'
 import CardNordeuropaHover from '../../assets/images/cards_hover/Hover_CardNordeuropa.png'
 import BackgroundImage from '../../assets/images/backgrounds/BackgroundLateinamerika.png'
-import Button from '../../components/layout/Button'
+import Button from '../../components/Button'
 
 const Background = styled.div`
   background-image: url(${BackgroundImage});

@@ -1,4 +1,4 @@
-// src/components/layout/BackgroundImage.js
+// src/components/BackgroundImage.js
 
 import styled from 'styled-components'
 

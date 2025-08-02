@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BackgroundImage from '../../assets/images/backgrounds/BackgroundNahost.png'
-import Button from '../../components/layout/Button'
+import Button from '../../components/Button'
 
 const ScreenWrapper = styled.div`
   background-color: #ffffff;

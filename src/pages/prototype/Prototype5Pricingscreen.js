@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BackgroundImage from '../../assets/images/backgrounds/BackgroundNordamerika.png'
-import PricingCard from '../../components/layout/PricingCard'
+import PricingCard from '../../components/PricingCard'
 import theme from '../../styles/theme'
 
 const ScreenWrapper = styled.div`

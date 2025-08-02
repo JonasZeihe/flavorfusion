@@ -1,4 +1,4 @@
-// src/components/layout/Button.js
+// src/components/Button.js
 
 import styled from 'styled-components'
 

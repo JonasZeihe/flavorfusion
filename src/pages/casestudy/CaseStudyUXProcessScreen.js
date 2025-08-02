@@ -1,105 +1,104 @@
+// src/pages/casestudy/CaseStudyUXProcessScreen.js
+
 import React from 'react'
 import styled from 'styled-components'
-import Heading from '../text/Heading'
-import Paragraph from '../text/Paragraph'
-import Image from '../../components/layout/Image'
-import ColorGrid from '../../assets/images/casestudy/ColorGrid.png' // Color Grid Bild
-import SketchWireframe from '../../assets/images/casestudy/mockupHanddrawn.png' // Beispielbild für Wireframe
-import Farbschema from '../../assets/images/casestudy/TypoScreen.png' // Beispiel für Farbpalette und Typo
-import PrototypePreview from '../../assets/images/casestudy/mockupLowFidelity.png' // Beispiel für Prototyp
+import Typography from '../../styles/typography'
+import Image from '../../components/Image'
 
-// Wrapper für den gesamten Abschnitt
-const UXProcessWrapper = styled.div`
-  background-color: #f9f9f9;
+import ColorGrid from '../../assets/images/casestudy/ColorGrid.png'
+import SketchWireframe from '../../assets/images/casestudy/mockupHanddrawn.png'
+import Farbschema from '../../assets/images/casestudy/TypoScreen.png'
+import PrototypePreview from '../../assets/images/casestudy/mockupLowFidelity.png'
+
+const Wrapper = styled.section`
+  background-color: ${({ theme }) => theme.colors.neutral[0]};
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
-  text-align: center;
+  padding: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)};
   min-height: 100vh;
 `
 
-// Container für den Textinhalt
-const TextContainer = styled.div`
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
+const Content = styled.div`
+  background: ${({ theme }) => theme.colors.neutral[0]};
+  padding: ${({ theme }) => theme.spacing(5)};
+  border-radius: ${({ theme }) => theme.borderRadius.medium};
+  max-width: 960px;
+  width: 100%;
+  box-shadow: ${({ theme }) => theme.boxShadow.modal};
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(6)};
 `
 
-// Abschnitts-Wrapper für jede Kategorie
 const Section = styled.div`
-  margin-bottom: 2rem;
-`
-
-// Überschrift für Unterabschnitte
-const SectionHeading = styled.h3`
-  font-size: var(--fontSizeHeadline4);
-  color: var(--primary3);
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
 `
 
 const CaseStudyUXProcessScreen = () => {
   return (
-    <UXProcessWrapper>
-      <TextContainer>
-        <Heading size="var(--fontSizeHeadline3)" color="var(--primary3)">
-          UX-Designprozess (Action)
-        </Heading>
+    <Wrapper>
+      <Content>
+        <Typography variant="h1" color="primary.3" align="center">
+          UX-Designprozess – Von Skizze bis Prototyp
+        </Typography>
 
-        {/* Von der Theorie zur Praxis */}
         <Section>
-          <SectionHeading>Von der Theorie zur Praxis</SectionHeading>
-          <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-            Nachdem die grundlegende Struktur im Notion und FigJam festgelegt
-            war, habe ich mit der Erstellung eines
-            <strong>Figma Files</strong> begonnen. In diesem File befindet sich
-            der Prototyp der Landing Page sowie verschiedene grafische Elemente.
-            Ich habe eine eigene Seite für die <strong>Typografie</strong>, die
-            Farbpalette, <strong>Icons</strong> und das Logo erstellt, um die
-            Elemente übersichtlich zu halten.
-          </Paragraph>
-          <Image src={SketchWireframe} alt="Sketch Wireframe Beispiel" />
+          <Typography variant="h2">Struktureller Startpunkt</Typography>
+          <Typography variant="body">
+            Auf Grundlage der strukturellen Notion- und FigJam-Vorarbeit
+            entstand das initiale Figma-File. Neben dem Prototyp enthielt es
+            klar definierte Ebenen für Typografie, Farbvarianten, Icons und
+            modulare UI-Komponenten. Ziel war eine präzise und wartbare
+            Designarchitektur.
+          </Typography>
+          <Image
+            src={SketchWireframe}
+            alt="Handgezeichneter Wireframe"
+            style={{ marginTop: '1rem' }}
+          />
         </Section>
 
-        {/* Farbpalette und Typografie */}
         <Section>
-          <SectionHeading>Farbpalette und Typografie</SectionHeading>
-          <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-            Die Farbpalette wurde basierend auf den jeweiligen Küchen definiert.
-            Jede Küche erhielt eine eigene Farbpalette, die von hellen bis zu
-            dunklen Schattierungen reicht. Für die mediterrane Küche habe ich
-            zum Beispiel eine <strong>Primärfarbe</strong> wie Olivgrün
-            verwendet, begleitet von helleren und dunkleren Tönen, um die Seite
-            harmonisch zu gestalten. Bei der <strong>Typografie</strong>
-            habe ich mit ChatGPT verschiedene Schriftarten für Überschriften,
-            Fließtexte und Call-to-Action-Buttons festgelegt.
-          </Paragraph>
-          <Image src={Farbschema} alt="Farbpalette und Typografie" />
-          <Image src={ColorGrid} alt="Color Grid Beispiel" />
+          <Typography variant="h2">Farb- & Typografiesystem</Typography>
+          <Typography variant="body">
+            Jede der sieben Weltküchen erhielt eine eigenständige Farbpalette
+            mit abgestuften Tönen für visuelle Tiefe und semantische Klarheit.
+            Beispiel: Mediterran = Olivgrün, Zitronengelb, Terrakotta. Die
+            Typografie wurde in Hierarchieebenen gegliedert – Display, Headline,
+            Body, Caption – mit spezifischen Font-Weights und Letter-Spacings.
+          </Typography>
+          <Image
+            src={Farbschema}
+            alt="Typografie-System"
+            style={{ marginTop: '1rem' }}
+          />
+          <Image
+            src={ColorGrid}
+            alt="Farbsystem-Flavours"
+            style={{ marginTop: '1.5rem' }}
+          />
         </Section>
 
-        {/* Interaktive Elemente */}
         <Section>
-          <SectionHeading>Interaktive Elemente</SectionHeading>
-          <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-            Ein wichtiger Aspekt der Landing Page waren die{' '}
-            <strong>interaktiven Elemente</strong>. Ich habe ein klickbares
-            Prototyp erstellt, der alle wesentlichen Funktionen enthält, wie zum
-            Beispiel eine <strong>Download-Sektion</strong>, die die Nutzer
-            direkt zur App-Installation führt. Call-to-Action-Buttons wurden
-            klar positioniert, um die Nutzerführung zu erleichtern. Die
-            Download-Sektion wurde prominent platziert, begleitet von einem{' '}
-            <strong>visuellen Background</strong>, der die jeweilige Küche
-            repräsentiert.
-          </Paragraph>
-          <Image src={PrototypePreview} alt="Prototyp Vorschau" />
+          <Typography variant="h2">Interaktion & Prototyping</Typography>
+          <Typography variant="body">
+            Der Prototyp wurde als klickbare Desktop-Erfahrung umgesetzt. Fokus
+            lag auf Stringenz: klare visuelle Module, eindeutige
+            Handlungsaufforderungen, intuitive Navigation. Die Download-Sektion
+            bildet den Endpunkt jeder Scroll-Bewegung – gestützt von einem
+            passenden kulturellen Background, der das visuelle Narrativ
+            abrundet.
+          </Typography>
+          <Image
+            src={PrototypePreview}
+            alt="Figma-Prototyp Vorschau"
+            style={{ marginTop: '1rem' }}
+          />
         </Section>
-      </TextContainer>
-    </UXProcessWrapper>
+      </Content>
+    </Wrapper>
   )
 }
 

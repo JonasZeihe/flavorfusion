@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import Container from '../components/layout/Container'
-import Button from '../components/layout/Button'
+import Container from '../components/Container'
+import Button from '../components/Button'
 
 const HomePage = () => (
   <Container customStyles="padding: 50px; text-align: center;">

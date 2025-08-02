@@ -1,71 +1,58 @@
+// src/pages/prototype/Prototype2Pitch1screen.js
+
 import React from 'react'
 import styled from 'styled-components'
+import Typography from '../../styles/typography'
+import Button from '../../components/Button'
+import Container from '../../components/Container'
 import BackgroundImage from '../../assets/images/backgrounds/BackgroundMediterran.png'
-import Button from '../../components/layout/Button'
-import Heading from '../text/Heading'
-import Paragraph from '../text/Paragraph'
-import Container from '../../components/layout/Container'
 
-const ScreenWrapper = styled.div`
-  background-color: var(--neutral1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+const Wrapper = styled.section`
+  background-color: ${({ theme }) => theme.colors.neutral[1]};
   background-image: url(${BackgroundImage});
   background-size: cover;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   position: relative;
+  width: 100%;
 `
 
-const TextOverlay = styled.div`
-  background-color: rgba(255, 193, 7, 0.85); /* Gelber Block mit Transparenz */
-  padding: 3rem;
-  border-radius: 8px;
+const TextBlock = styled.div`
+  background-color: ${({ theme }) => theme.colors.primary[2]}dd;
+  padding: ${({ theme }) => theme.spacing(6)};
+  border-radius: ${({ theme }) => theme.borderRadius.medium};
+  max-width: 800px;
   text-align: left;
-  max-width: 800px; /* Maximale Breite für die Textbox */
 `
 
-const CTAButtonWrapper = styled.div`
+const CTAWrapper = styled.div`
   position: absolute;
-  bottom: 3rem;
-  right: 3rem;
+  bottom: ${({ theme }) => theme.spacing(6)};
+  right: ${({ theme }) => theme.spacing(6)};
 `
 
 const Prototype2PitchScreen = () => {
   return (
-    <ScreenWrapper>
+    <Wrapper>
       <Container>
-        <TextOverlay>
-          <Heading
-            size="var(--fontSizeHeadline3)"
-            color="var(--neutral1)"
-            align="left"
-          >
+        <TextBlock>
+          <Typography variant="h2" color="neutral.0">
             Dein Kochassistent für Zuhause –
-          </Heading>
-          <Paragraph
-            size="var(--fontSizeBody)"
-            color="var(--neutral1)"
-            align="left"
-            margin="1.5rem 0"
-          >
+          </Typography>
+          <Typography variant="body" color="neutral.0">
             Entdecke einfache, personalisierte Rezepte und erhalte
             maßgeschneiderte Einkaufslisten. Für stressfreies Kochen und mehr
             Genuss.
-          </Paragraph>
-        </TextOverlay>
+          </Typography>
+        </TextBlock>
       </Container>
-      <CTAButtonWrapper>
-        <Button
-          text="Du hast noch Fragen?"
-          bgColor="var(--secondary3)"
-          fontSize="var(--fontSizeButton)"
-          padding="1rem 2rem"
-        />
-      </CTAButtonWrapper>
-    </ScreenWrapper>
+      <CTAWrapper>
+        <Button text="Du hast noch Fragen?" variant="secondary" size="large" />
+      </CTAWrapper>
+    </Wrapper>
   )
 }
 

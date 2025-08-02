@@ -1,33 +1,34 @@
+// src/components/Footer.js
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import theme from '../../styles/theme'
-import typography from '../../styles/typography'
 
 const FooterContainer = styled.footer`
   width: 100%;
-  padding: ${theme.spacing(2.5)};
-  background: ${theme.colors.neutral5};
-  color: ${theme.colors.primary1};
+  padding: ${({ theme }) => theme.spacing(2.5)};
+  background: ${({ theme }) => theme.colors.neutral[5]};
+  color: ${({ theme }) => theme.colors.primary[1]};
   position: fixed;
   bottom: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: ${typography.fontFamily.primary};
-  font-size: ${typography.fontSize.body};
+  font-family: ${({ theme }) => theme.typography.fontFamily.primary};
+  font-size: ${({ theme }) => theme.typography.fontSize.body};
   z-index: 120;
 `
 
 const StyledLink = styled(Link)`
-  color: ${theme.colors.primary1};
+  color: ${({ theme }) => theme.colors.primary[1]};
   text-decoration: none;
-  font-weight: ${typography.fontWeight.bold};
-  letter-spacing: ${typography.letterSpacing.normal};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
+  letter-spacing: ${({ theme }) => theme.typography.letterSpacing.normal};
   transition: color 0.19s;
+
   &:hover {
-    color: ${theme.colors.accent3};
+    color: ${({ theme }) => theme.colors.primary[3]};
     text-decoration: underline;
   }
 `

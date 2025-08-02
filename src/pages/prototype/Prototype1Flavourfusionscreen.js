@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import BackgroundImage from '../../assets/images/backgrounds/BackgroundFlavourFusion.png'
 import Logo from '../../assets/images/logo/logo.png'
 import LogoText from '../../assets/images/logo/logotext.png'
-import Button from '../../components/layout/Button'
+import Button from '../../components/Button'
 
 const ScreenWrapper = styled.div`
   background-color: #ffffff;

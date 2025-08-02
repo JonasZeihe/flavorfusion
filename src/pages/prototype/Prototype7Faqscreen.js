@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import FaqAccordion from '../../components/layout/Accordion'
+import FaqAccordion from '../../components/Accordion'
 import BackgroundImage from '../../assets/images/backgrounds/BackgroundAfrika.png'
 
 const ScreenWrapper = styled.div`

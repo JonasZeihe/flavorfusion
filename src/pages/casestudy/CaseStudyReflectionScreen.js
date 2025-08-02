@@ -1,58 +1,57 @@
-import React from "react";
-import styled from "styled-components";
-import Heading from "../text/Heading";
-import Paragraph from "../text/Paragraph";
+// src/pages/casestudy/CaseStudyReflectionScreen.js
 
-// Wrapper für den gesamten Abschnitt
-const ReflectionWrapper = styled.div`
-  background-color: #f9f9f9;
+import React from 'react'
+import styled from 'styled-components'
+import Typography from '../../styles/typography'
+
+const Wrapper = styled.section`
+  background-color: ${({ theme }) => theme.colors.neutral[0]};
+  display: flex;
+  justify-content: center;
+  padding: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)};
+  min-height: 100vh;
+`
+
+const Content = styled.div`
+  background: ${({ theme }) => theme.colors.neutral[0]};
+  padding: ${({ theme }) => theme.spacing(5)};
+  border-radius: ${({ theme }) => theme.borderRadius.medium};
+  max-width: 960px;
+  width: 100%;
+  box-shadow: ${({ theme }) => theme.boxShadow.modal};
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  text-align: center;
-  min-height: 100vh;
-`;
-
-// Container für den Textinhalt
-const TextContainer = styled.div`
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-`;
+  gap: ${({ theme }) => theme.spacing(4)};
+`
 
 const CaseStudyReflectionScreen = () => {
   return (
-    <ReflectionWrapper>
-      <TextContainer>
-        <Heading size="var(--fontSizeHeadline3)" color="var(--primary3)">
-          Reflexion und Learnings
-        </Heading>
+    <Wrapper>
+      <Content>
+        <Typography variant="h1" color="primary.3" align="center">
+          Reflexion & Learnings
+        </Typography>
 
-        <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-          Dieses Projekt hat mir gezeigt, wie hilfreich KI-Tools wie ChatGPT
-          sein können, um den Designprozess zu beschleunigen und kreative Ideen
-          zu entwickeln. Ich habe gelernt, dass es wichtig ist, regelmäßig
-          Feedback einzuholen und flexibel zu bleiben, um sich nicht in eine
-          bestimmte Designrichtung zu verrennen. Außerdem habe ich wertvolle
-          Erfahrungen im Umgang mit interaktiven Elementen und Prototyping
-          gesammelt.
-        </Paragraph>
+        <Typography variant="body">
+          Dieses Projekt war nicht nur ein UI/UX-Vorhaben, sondern eine
+          intensive Lernerfahrung im strukturierten Arbeiten mit KI-gestützten
+          Tools. Besonders die Integration von ChatGPT in die konzeptionelle und
+          typografische Systematik hat meine Arbeitsweise beschleunigt und
+          präzisiert. Gleichzeitig hat mich der iterative Prototyping-Prozess
+          gezwungen, visuelle Entscheidungen kontinuierlich zu validieren.
+        </Typography>
 
-        <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-          Wenn ich dieses Projekt noch einmal machen würde, würde ich mehr Fokus
-          auf <strong>Nutzerforschung</strong> und <strong>Personas</strong>
-          legen, um eine noch nutzerzentriertere Lösung zu entwickeln. Außerdem
-          möchte ich meine Fähigkeiten in der <strong>Bilderzeugung</strong>
-          mit KI verbessern, um noch bessere visuelle Ergebnisse zu erzielen.
-        </Paragraph>
-      </TextContainer>
-    </ReflectionWrapper>
-  );
-};
+        <Typography variant="body">
+          Rückblickend würde ich die Phase der <strong>Nutzerforschung</strong>{' '}
+          systematischer aufbauen, um von Anfang an fundiertere Entscheidungen
+          zu treffen. Ebenso sehe ich Potenzial in der{' '}
+          <strong>generativen Bildgestaltung</strong> – das Ziel: visuelle
+          Kohärenz auf illustrativer Ebene, ohne die Kontrolle an Stilbruch oder
+          visuelle Beliebigkeit zu verlieren.
+        </Typography>
+      </Content>
+    </Wrapper>
+  )
+}
 
-export default CaseStudyReflectionScreen;
+export default CaseStudyReflectionScreen

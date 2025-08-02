@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import theme from '../../styles/theme'
-import typography from '../../styles/typography'
+import theme from '../styles/theme'
+import typography from '../styles/typography'
 
 const CardContainer = styled.div`
   width: 100%;

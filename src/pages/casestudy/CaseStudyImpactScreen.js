@@ -1,48 +1,49 @@
-import React from "react";
-import styled from "styled-components";
-import Heading from "../text/Heading";
-import Paragraph from "../text/Paragraph";
+// src/pages/casestudy/CaseStudyImpactScreen.js
 
-// Wrapper für den gesamten Abschnitt
-const ImpactWrapper = styled.div`
-  background-color: #f9f9f9;
+import React from 'react'
+import styled from 'styled-components'
+import Typography from '../../styles/typography'
+
+const Wrapper = styled.section`
+  background-color: ${({ theme }) => theme.colors.neutral[0]};
+  display: flex;
+  justify-content: center;
+  padding: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)};
+  min-height: 100vh;
+`
+
+const Content = styled.div`
+  background: ${({ theme }) => theme.colors.neutral[0]};
+  padding: ${({ theme }) => theme.spacing(5)};
+  border-radius: ${({ theme }) => theme.borderRadius.medium};
+  max-width: 960px;
+  width: 100%;
+  box-shadow: ${({ theme }) => theme.boxShadow.modal};
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  text-align: center;
-  min-height: 100vh;
-`;
-
-// Container für den Textinhalt
-const TextContainer = styled.div`
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-`;
+  gap: ${({ theme }) => theme.spacing(4)};
+`
 
 const CaseStudyImpactScreen = () => {
   return (
-    <ImpactWrapper>
-      <TextContainer>
-        <Heading size="var(--fontSizeHeadline3)" color="var(--primary3)">
-          Auswirkungen und Ergebnisse
-        </Heading>
+    <Wrapper>
+      <Content>
+        <Typography variant="h1" color="primary.3" align="center">
+          Auswirkungen & Ergebnisse
+        </Typography>
 
-        <Paragraph size="var(--fontSizeBody)" color="var(--neutral6)">
-          Da das Projekt primär für mein Portfolio entwickelt wurde, gibt es
-          keine realen Nutzerdaten oder Metriken. Das Hauptziel war es, einen
-          voll funktionsfähigen Prototyp zu entwickeln, der die App und ihre
-          Funktionen klar vermittelt. Das Design zeigt meine Fähigkeit, eine
-          komplexe und kulturell vielseitige Landing Page zu gestalten.
-        </Paragraph>
-      </TextContainer>
-    </ImpactWrapper>
-  );
-};
+        <Typography variant="body">
+          Das Projekt wurde als vollständiger Prototyp für mein Portfolio
+          konzipiert – ohne reale Metriken oder Nutzerzahlen. Die Wirkung liegt
+          nicht in quantitativen KPIs, sondern in der Demonstration meiner
+          Fähigkeit, ein komplexes visuelles und interaktives System zu
+          entwerfen: kulturell differenziert, systematisch typografisch
+          aufgebaut und UI-strategisch durchdacht. Der Case erfüllt die
+          Anforderungen an ein modernes UX/UI-Showcase.
+        </Typography>
+      </Content>
+    </Wrapper>
+  )
+}
 
-export default CaseStudyImpactScreen;
+export default CaseStudyImpactScreen

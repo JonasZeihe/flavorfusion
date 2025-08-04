@@ -1,27 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
-  const location = useLocation()
-
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Logo to="/casestudy">FlavorFusion</Logo>
+        <Logo to="/">FlavorFusion</Logo>
         <NavWrapper>
-          <StyledNavLink
-            to="/casestudy"
-            $active={location.pathname === '/casestudy'}
-          >
-            Case Study
-          </StyledNavLink>
-          <StyledNavLink
-            to="/prototype"
-            $active={location.pathname === '/prototype'}
-          >
-            Prototype
-          </StyledNavLink>
+          <StyledNavLink to="/">Case Study</StyledNavLink>
+          <StyledNavLink to="/prototype">Prototype</StyledNavLink>
         </NavWrapper>
       </HeaderContent>
     </HeaderContainer>
@@ -74,15 +62,17 @@ const NavWrapper = styled.nav`
   align-items: center;
 `
 
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled(NavLink).attrs({ end: true })`
   font-size: ${({ theme }) => theme.typography.fontSize.h4};
-  font-weight: ${({ $active, theme }) =>
-    $active
-      ? theme.typography.fontWeight.bold
-      : theme.typography.fontWeight.regular};
-  color: ${({ $active, theme }) =>
-    $active ? theme.colors.primary.main : theme.colors.neutral.text};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
+  color: ${({ theme }) => theme.colors.neutral.text};
   text-decoration: none;
+
+  &.active {
+    font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
+    color: ${({ theme }) => theme.colors.primary.main};
+  }
+
   &:hover {
     color: ${({ theme }) =>
       theme.colors.accent?.main || theme.colors.primary.main};

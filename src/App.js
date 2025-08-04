@@ -6,7 +6,7 @@ import Header from './components/Header'
 import ScrollToTopButton from './components/ScrollToTopButton'
 
 const App = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <GlobalStyles />
     <Header />
     <Routes>

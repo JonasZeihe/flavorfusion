@@ -11,7 +11,8 @@ import Header from './components/Header'
 import ScrollToTopButton from './components/ScrollToTopButton'
 
 const App = () => (
-  <Router>
+  <Router basename="/flavorfusion">
+    {' '}
     <GlobalStyles />
     <Header />
     <Routes>

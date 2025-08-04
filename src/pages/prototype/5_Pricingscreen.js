@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import BackgroundImage from '../../assets/images/backgrounds/BackgroundNordamerika.png'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundNordamerika.webp'
 import PricingCard from '../../components/PricingCard'
 import theme from '../../styles/theme'
 

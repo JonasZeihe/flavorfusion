@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import BackgroundImage from '../../assets/images/backgrounds/BackgroundNahost.png'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundNahost.webp'
 import Button from '../../components/Button'
 
 const ScreenWrapper = styled.div`

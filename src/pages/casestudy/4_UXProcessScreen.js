@@ -8,10 +8,10 @@ import PageWrapper from '../../components/Wrapper/PageWrapper'
 import Wrapper from '../../components/Wrapper/Wrapper'
 import styled from 'styled-components'
 
-import ColorGrid from '../../assets/images/casestudy/ColorGrid.png'
-import SketchWireframe from '../../assets/images/casestudy/mockupHanddrawn.png'
-import Farbschema from '../../assets/images/casestudy/TypoScreen.png'
-import PrototypePreview from '../../assets/images/casestudy/mockupLowFidelity.png'
+import ColorGrid from '../../assets/images/casestudy/ColorGrid.webp'
+import SketchWireframe from '../../assets/images/casestudy/mockupHanddrawn.webp'
+import Farbschema from '../../assets/images/casestudy/TypoScreen.webp'
+import PrototypePreview from '../../assets/images/casestudy/mockupLowFidelity.webp'
 
 const Section = styled.div`
   display: flex;

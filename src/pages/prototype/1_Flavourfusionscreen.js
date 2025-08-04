@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import BackgroundImage from '../../assets/images/backgrounds/BackgroundFlavourFusion.png'
-import LogoText from '../../assets/images/logo/LogoRound.png'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundFlavourFusion.webp'
+import LogoText from '../../assets/images/logo/LogoRound.webp'
 import Button from '../../components/Button'
 
 const ScreenWrapper = styled.div`

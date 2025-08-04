@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import FaqAccordion from '../../components/Accordion'
-import BackgroundImage from '../../assets/images/backgrounds/BackgroundAfrika.png'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundAfrika.webp'
 
 const ScreenWrapper = styled.div`
   background-color: #ffffff;

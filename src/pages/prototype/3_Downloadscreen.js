@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import AppStoreLogoDefault from "../../assets/images/appstore/Default_apple.png";
-import AppStoreLogoHover from "../../assets/images/appstore/Hover_apple.png";
-import GooglePlayLogoDefault from "../../assets/images/appstore/Default_google.png";
-import GooglePlayLogoHover from "../../assets/images/appstore/Hover_google.png";
-import QRCodeGoogle from "../../assets/images/appstore/QR/QR_google.svg";
-import QRCodeApple from "../../assets/images/appstore/QR/QR_apple.svg";
-import BackgroundImage from "../../assets/images/backgrounds/BackgroundAsien.png";
+import React from 'react'
+import styled from 'styled-components'
+import AppStoreLogoDefault from '../../assets/images/appstore/Default_apple.webp'
+import AppStoreLogoHover from '../../assets/images/appstore/Hover_apple.webp'
+import GooglePlayLogoDefault from '../../assets/images/appstore/Default_google.webp'
+import GooglePlayLogoHover from '../../assets/images/appstore/Hover_google.webp'
+import QRCodeGoogle from '../../assets/images/appstore/QR/QR_google.svg'
+import QRCodeApple from '../../assets/images/appstore/QR/QR_apple.svg'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundAsien.webp'
 
 const ScreenWrapper = styled.div`
   background-image: url(${BackgroundImage});
@@ -19,7 +19,7 @@ const ScreenWrapper = styled.div`
   height: 100vh;
   background-size: cover;
   background-position: center;
-`;
+`
 
 const DownloadSection = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ const DownloadSection = styled.div`
   width: 100%;
   max-width: 800px;
   margin-bottom: 3rem;
-`;
+`
 
 const DownloadBlock = styled.div`
   display: flex;
@@ -46,20 +46,20 @@ const DownloadBlock = styled.div`
   &:hover img {
     content: url(${(props) => props.hover});
   }
-`;
+`
 
 const QRCode = styled.img`
   width: 10rem;
   height: auto;
   margin-bottom: 1.5rem; /* Etwas mehr Abstand zwischen QR-Code und Text */
-`;
+`
 
 const DownloadText = styled.p`
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: #fff;
   margin-top: -0.5rem; /* Optionaler negativer Abstand für engere Optik */
-`;
+`
 
 const Prototype3Downloadscreen = () => {
   return (
@@ -77,7 +77,7 @@ const Prototype3Downloadscreen = () => {
         </DownloadBlock>
       </DownloadSection>
     </ScreenWrapper>
-  );
-};
+  )
+}
 
-export default Prototype3Downloadscreen;
+export default Prototype3Downloadscreen

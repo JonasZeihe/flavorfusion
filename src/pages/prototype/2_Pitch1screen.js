@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Typography from '../../styles/typography'
 import Button from '../../components/Button'
 import Container from '../../components/Container'
-import BackgroundImage from '../../assets/images/backgrounds/BackgroundMediterran.png'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundMediterran.webp'
 
 const Wrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.neutral[1]};

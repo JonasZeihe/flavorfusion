@@ -6,7 +6,7 @@ import Wrapper from '../../components/Wrapper/Wrapper'
 import PageWrapper from '../../components/Wrapper/PageWrapper'
 import WithHeaderOffset from '../../components/Layout/WithHeaderOffset'
 import styled from 'styled-components'
-import LogoRound from '../../assets/images/logo/LogoRound.png'
+import LogoRound from '../../assets/images/logo/LogoRound.webp'
 
 const LogoContainer = styled.div`
   display: flex;

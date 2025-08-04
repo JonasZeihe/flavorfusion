@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import BackgroundImage from "../../assets/images/backgrounds/BackgroundNordeuropa.png";
+import React from 'react'
+import styled from 'styled-components'
+import BackgroundImage from '../../assets/images/backgrounds/BackgroundNordeuropa.webp'
 
 const ScreenWrapper = styled.div`
   background-color: #ffffff;
@@ -14,7 +14,7 @@ const ScreenWrapper = styled.div`
   background-size: cover;
   background-position: center;
   padding: 2rem;
-`;
+`
 
 const ImprintCard = styled.div`
   background-color: rgba(
@@ -24,31 +24,31 @@ const ImprintCard = styled.div`
     0.9
   ); /* Leicht transparenter Hintergrund */
   color: #333; /* Textfarbe */
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   max-width: 800px;
   width: 100%;
   backdrop-filter: blur(10px); /* Hintergrundunschärfe */
-`;
+`
 
 const Title = styled.h1`
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-colorsprimary-3);
   text-align: center;
   margin-bottom: 1.5rem;
-`;
+`
 
 const Paragraph = styled.p`
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1rem;
   text-align: left;
-`;
+`
 
 const Prototype8Imprintscreen = () => {
   return (
@@ -76,14 +76,14 @@ const Prototype8Imprintscreen = () => {
               Anfrage mindestens einmal zu ignorieren.
             </li>
             <li>
-              Website:{" "}
+              Website:{' '}
               <a
                 href="http://www.ich-bin-so-lecker.de/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 www.ich-bin-so-lecker.de
-              </a>{" "}
+              </a>{' '}
               – Warnung: Betreten der Website kann zu spontanen Kochshows in der
               eigenen Küche führen.
             </li>
@@ -132,7 +132,7 @@ const Prototype8Imprintscreen = () => {
         </Paragraph>
       </ImprintCard>
     </ScreenWrapper>
-  );
-};
+  )
+}
 
-export default Prototype8Imprintscreen;
+export default Prototype8Imprintscreen

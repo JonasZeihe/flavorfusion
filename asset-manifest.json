@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/flavorfusion/static/css/main.e6c13ad2.css",
-    "main.js": "/flavorfusion/static/js/main.a5ea8949.js",
+    "main.js": "/flavorfusion/static/js/main.b58c9466.js",
     "static/js/453.8cb9a392.chunk.js": "/flavorfusion/static/js/453.8cb9a392.chunk.js",
     "static/media/QR_google.svg": "/flavorfusion/static/media/QR_google.b4ecdde15450af5415dd2578d1060e77.svg",
     "static/media/mockupHanddrawn.webp": "/flavorfusion/static/media/mockupHanddrawn.937153eceee8c123ed87.webp",
@@ -39,11 +39,11 @@
     "static/media/Hover_google.webp": "/flavorfusion/static/media/Hover_google.4a4de138fe95f0cbec65.webp",
     "index.html": "/flavorfusion/index.html",
     "main.e6c13ad2.css.map": "/flavorfusion/static/css/main.e6c13ad2.css.map",
-    "main.a5ea8949.js.map": "/flavorfusion/static/js/main.a5ea8949.js.map",
+    "main.b58c9466.js.map": "/flavorfusion/static/js/main.b58c9466.js.map",
     "453.8cb9a392.chunk.js.map": "/flavorfusion/static/js/453.8cb9a392.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.a5ea8949.js"
+    "static/js/main.b58c9466.js"
   ]
 }

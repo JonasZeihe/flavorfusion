@@ -39,12 +39,18 @@ const HeaderContainer = styled.header`
   backdrop-filter: blur(13px) saturate(1.11);
   border-bottom: 1.5px solid ${({ theme }) => theme.colors.surface[4]};
   box-shadow: ${({ theme }) => theme.boxShadow.modal};
+  height: 64px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    height: 56px;
+  }
 `
 
 const HeaderContent = styled.div`
   max-width: ${({ theme }) => theme.breakpoints.xl};
   margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing(2)};
+  height: 100%;
+  padding: 0 ${({ theme }) => theme.spacing(2)};
   display: flex;
   justify-content: space-between;
   align-items: center;

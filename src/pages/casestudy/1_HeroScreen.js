@@ -2,17 +2,40 @@
 
 import React from 'react'
 import Typography from '../../styles/typography'
-import Button from '../../components/Button'
-import Wrapper from '../../components/Wrapper'
-import PageWrapper from '../../components/PageWrapper'
-import BackgroundWrapper from '../../components/BackgroundWrapper'
-import BackgroundImage from '../../assets/images/backgrounds/BackgroundFlavourFusion.png'
+import Wrapper from '../../components/Wrapper/Wrapper'
+import PageWrapper from '../../components/Wrapper/PageWrapper'
+import WithHeaderOffset from '../../components/Layout/WithHeaderOffset'
+import styled from 'styled-components'
+import LogoRound from '../../assets/images/logo/LogoRound.png'
+
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: ${({ theme }) => theme.spacing(5)};
+  img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: ${({ theme }) => theme.boxShadow.card};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    img {
+      max-width: 300px;
+    }
+  }
+`
 
 const CaseStudyHeroScreen = () => (
-  <BackgroundWrapper image={BackgroundImage}>
-    <PageWrapper>
-      <Wrapper style={{ maxWidth: '860px' }}>
-        <Typography variant="h1" color="primary.3">
+  <WithHeaderOffset>
+    <PageWrapper background="surface.0">
+      <Wrapper outlined>
+        <LogoContainer>
+          <img src={LogoRound} alt="FlavorFusion Logo" />
+        </LogoContainer>
+
+        <Typography variant="h1" color="primary.3" align="center">
           FlavorFusion – UX/UI Case Study
         </Typography>
 
@@ -36,11 +59,9 @@ const CaseStudyHeroScreen = () => (
           <strong>Ziel:</strong> Emotionale Aktivierung + visuelle Klarheit →
           App-Download motivieren
         </Typography>
-
-        <Button text="Zur Case Study" variant="primary" size="large" />
       </Wrapper>
     </PageWrapper>
-  </BackgroundWrapper>
+  </WithHeaderOffset>
 )
 
 export default CaseStudyHeroScreen

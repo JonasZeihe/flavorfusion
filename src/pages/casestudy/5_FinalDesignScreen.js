@@ -1,9 +1,12 @@
 // src/pages/casestudy/CaseStudyFinalDesignScreen.js
 
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react'
 import Typography from '../../styles/typography'
 import Image from '../../components/Image'
+import Lightbox from '../../components/Lightbox'
+import PageWrapper from '../../components/Wrapper/PageWrapper'
+import Wrapper from '../../components/Wrapper/Wrapper'
+import styled from 'styled-components'
 
 import MediterranBackground from '../../assets/images/backgrounds/BackgroundMediterran.png'
 import AsiaBackground from '../../assets/images/backgrounds/BackgroundAsien.png'
@@ -21,54 +24,97 @@ import AfricaCard from '../../assets/images/cards/CardAfrika.png'
 import NorthEurCard from '../../assets/images/cards/CardNordeuropa.png'
 import MiddleEastCard from '../../assets/images/cards/CardNahost.png'
 
-const Wrapper = styled.section`
-  background-color: ${({ theme }) => theme.colors.neutral[0]};
-  display: flex;
-  justify-content: center;
-  padding: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)};
-  min-height: 100vh;
-`
-
-const Content = styled.div`
-  background: ${({ theme }) => theme.colors.neutral[0]};
-  padding: ${({ theme }) => theme.spacing(5)};
-  border-radius: ${({ theme }) => theme.borderRadius.medium};
-  max-width: 960px;
-  width: 100%;
-  box-shadow: ${({ theme }) => theme.boxShadow.modal};
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(6)};
-`
-
 const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
+  margin-bottom: ${({ theme }) => theme.spacing(4)};
 `
 
 const ImageGallery = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: ${({ theme }) => theme.spacing(5)};
+  margin-top: ${({ theme }) => theme.spacing(4)};
+  width: 100%;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+`
+
+const ImageWrapper = styled.div`
+  width: 100%;
+  cursor: zoom-in;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: ${({ theme }) => theme.borderRadius.large};
+    box-shadow: ${({ theme }) => theme.boxShadow.modal};
+    transition: transform 0.25s ease;
+
+    &:hover {
+      transform: scale(1.025);
+    }
+  }
+`
+
+const CardGallery = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: ${({ theme }) => theme.spacing(3)};
-  margin-top: ${({ theme }) => theme.spacing(2)};
+  margin-top: ${({ theme }) => theme.spacing(3)};
 `
 
-const ImageWrapper = styled.div`
-  width: 260px;
+const CardWrapper = styled.div`
+  width: 220px;
+  max-width: 100%;
+  cursor: zoom-in;
+
   img {
     width: 100%;
     height: auto;
-    border-radius: ${({ theme }) => theme.borderRadius.small};
+    border-radius: ${({ theme }) => theme.borderRadius.medium};
     box-shadow: ${({ theme }) => theme.boxShadow.card};
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 `
 
 const CaseStudyFinalDesignScreen = () => {
+  const [lightbox, setLightbox] = useState({ open: false, src: null })
+
+  const openLightbox = (src) => setLightbox({ open: true, src })
+  const closeLightbox = () => setLightbox({ open: false, src: null })
+
+  const backgrounds = [
+    MediterranBackground,
+    AsiaBackground,
+    LatamBackground,
+    NorthAmericaBackground,
+    AfricaBackground,
+    NorthEuropeBackground,
+    MiddleEastBackground,
+  ]
+
+  const cards = [
+    MediterranCard,
+    AsiaCard,
+    LatamCard,
+    NorthAmCard,
+    AfricaCard,
+    NorthEurCard,
+    MiddleEastCard,
+  ]
+
   return (
-    <Wrapper>
-      <Content>
+    <PageWrapper background="surface.main">
+      <Wrapper outlined>
         <Typography variant="h1" color="primary.3" align="center">
           Finale Lösung – Visual Design & Umsetzung
         </Typography>
@@ -87,16 +133,8 @@ const CaseStudyFinalDesignScreen = () => {
             verbindet.
           </Typography>
           <ImageGallery>
-            {[
-              MediterranBackground,
-              AsiaBackground,
-              LatamBackground,
-              NorthAmericaBackground,
-              AfricaBackground,
-              NorthEuropeBackground,
-              MiddleEastBackground,
-            ].map((src, i) => (
-              <ImageWrapper key={i}>
+            {backgrounds.map((src, i) => (
+              <ImageWrapper key={i} onClick={() => openLightbox(src)}>
                 <Image src={src} alt={`Hintergrund Weltküche ${i + 1}`} />
               </ImageWrapper>
             ))}
@@ -113,24 +151,24 @@ const CaseStudyFinalDesignScreen = () => {
             Bildsprache. Dadurch entsteht ein kohärentes, modulares Designsystem
             mit hoher Wiedererkennbarkeit.
           </Typography>
-          <ImageGallery>
-            {[
-              MediterranCard,
-              AsiaCard,
-              LatamCard,
-              NorthAmCard,
-              AfricaCard,
-              NorthEurCard,
-              MiddleEastCard,
-            ].map((src, i) => (
-              <ImageWrapper key={i}>
+          <CardGallery>
+            {cards.map((src, i) => (
+              <CardWrapper key={i} onClick={() => openLightbox(src)}>
                 <Image src={src} alt={`Karte Weltküche ${i + 1}`} />
-              </ImageWrapper>
+              </CardWrapper>
             ))}
-          </ImageGallery>
+          </CardGallery>
         </Section>
-      </Content>
-    </Wrapper>
+      </Wrapper>
+
+      {lightbox.open && (
+        <Lightbox
+          src={lightbox.src}
+          alt="Vergrößerte Ansicht"
+          onClose={closeLightbox}
+        />
+      )}
+    </PageWrapper>
   )
 }
 

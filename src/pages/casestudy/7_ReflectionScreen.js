@@ -1,33 +1,14 @@
 // src/pages/casestudy/CaseStudyReflectionScreen.js
 
 import React from 'react'
-import styled from 'styled-components'
 import Typography from '../../styles/typography'
-
-const Wrapper = styled.section`
-  background-color: ${({ theme }) => theme.colors.neutral[0]};
-  display: flex;
-  justify-content: center;
-  padding: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)};
-  min-height: 100vh;
-`
-
-const Content = styled.div`
-  background: ${({ theme }) => theme.colors.neutral[0]};
-  padding: ${({ theme }) => theme.spacing(5)};
-  border-radius: ${({ theme }) => theme.borderRadius.medium};
-  max-width: 960px;
-  width: 100%;
-  box-shadow: ${({ theme }) => theme.boxShadow.modal};
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)};
-`
+import PageWrapper from '../../components/Wrapper/PageWrapper'
+import Wrapper from '../../components/Wrapper/Wrapper'
 
 const CaseStudyReflectionScreen = () => {
   return (
-    <Wrapper>
-      <Content>
+    <PageWrapper background="surface.0">
+      <Wrapper outlined>
         <Typography variant="h1" color="primary.3" align="center">
           Reflexion & Learnings
         </Typography>
@@ -49,8 +30,8 @@ const CaseStudyReflectionScreen = () => {
           Kohärenz auf illustrativer Ebene, ohne die Kontrolle an Stilbruch oder
           visuelle Beliebigkeit zu verlieren.
         </Typography>
-      </Content>
-    </Wrapper>
+      </Wrapper>
+    </PageWrapper>
   )
 }
 

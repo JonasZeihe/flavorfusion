@@ -1,11 +1,11 @@
-import Prototype1Flavourfusionscreen from './prototype/Prototype1Flavourfusionscreen'
-import Prototype2Pitch1screen from './prototype/Prototype2Pitch1screen'
-import Prototype3Downloadscreen from './prototype/Prototype3Downloadscreen'
-import Prototype4Cardscreen from './prototype/Prototype4Cardscreen'
-import Prototype5Pricingscreen from './prototype/Prototype5Pricingscreen'
-import Prototype6Pitch2screen from './prototype/Prototype6Pitch2screen'
-import Prototype7Faqscreen from './prototype/Prototype7Faqscreen'
-import Prototype8Imprintscreen from './prototype/Prototype8Imprintscreen'
+import Prototype1Flavourfusionscreen from './prototype/1_Flavourfusionscreen'
+import Prototype2Pitch1screen from './prototype/2_Pitch1screen'
+import Prototype3Downloadscreen from './prototype/3_Downloadscreen'
+import Prototype4Cardscreen from './prototype/4_Cardscreen'
+import Prototype5Pricingscreen from './prototype/5_Pricingscreen'
+import Prototype6Pitch2screen from './prototype/6_Pitch2screen'
+import Prototype7Faqscreen from './prototype/7_Faqscreen'
+import Prototype8Imprintscreen from './prototype/8_Imprintscreen'
 
 const screens = [
   Prototype1Flavourfusionscreen,

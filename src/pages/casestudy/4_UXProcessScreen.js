@@ -1,45 +1,42 @@
 // src/pages/casestudy/CaseStudyUXProcessScreen.js
 
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react'
 import Typography from '../../styles/typography'
 import Image from '../../components/Image'
+import Lightbox from '../../components/Lightbox'
+import PageWrapper from '../../components/Wrapper/PageWrapper'
+import Wrapper from '../../components/Wrapper/Wrapper'
+import styled from 'styled-components'
 
 import ColorGrid from '../../assets/images/casestudy/ColorGrid.png'
 import SketchWireframe from '../../assets/images/casestudy/mockupHanddrawn.png'
 import Farbschema from '../../assets/images/casestudy/TypoScreen.png'
 import PrototypePreview from '../../assets/images/casestudy/mockupLowFidelity.png'
 
-const Wrapper = styled.section`
-  background-color: ${({ theme }) => theme.colors.neutral[0]};
-  display: flex;
-  justify-content: center;
-  padding: ${({ theme }) => theme.spacing(8)} ${({ theme }) => theme.spacing(4)};
-  min-height: 100vh;
-`
-
-const Content = styled.div`
-  background: ${({ theme }) => theme.colors.neutral[0]};
-  padding: ${({ theme }) => theme.spacing(5)};
-  border-radius: ${({ theme }) => theme.borderRadius.medium};
-  max-width: 960px;
-  width: 100%;
-  box-shadow: ${({ theme }) => theme.boxShadow.modal};
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(6)};
-`
-
 const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
+  margin-bottom: ${({ theme }) => theme.spacing(4)};
+`
+
+const StyledImage = styled(Image)`
+  border-radius: ${({ theme }) => theme.borderRadius.medium};
+  box-shadow: ${({ theme }) => theme.boxShadow.card};
+  margin-top: ${({ theme }) => theme.spacing(2)};
+  width: 100%;
+  cursor: zoom-in;
 `
 
 const CaseStudyUXProcessScreen = () => {
+  const [lightbox, setLightbox] = useState({ open: false, src: null })
+
+  const openLightbox = (src) => setLightbox({ open: true, src })
+  const closeLightbox = () => setLightbox({ open: false, src: null })
+
   return (
-    <Wrapper>
-      <Content>
+    <PageWrapper background="neutral.0">
+      <Wrapper outlined>
         <Typography variant="h1" color="primary.3" align="center">
           UX-Designprozess – Von Skizze bis Prototyp
         </Typography>
@@ -53,10 +50,10 @@ const CaseStudyUXProcessScreen = () => {
             modulare UI-Komponenten. Ziel war eine präzise und wartbare
             Designarchitektur.
           </Typography>
-          <Image
+          <StyledImage
             src={SketchWireframe}
             alt="Handgezeichneter Wireframe"
-            style={{ marginTop: '1rem' }}
+            onClick={() => openLightbox(SketchWireframe)}
           />
         </Section>
 
@@ -69,15 +66,15 @@ const CaseStudyUXProcessScreen = () => {
             Typografie wurde in Hierarchieebenen gegliedert – Display, Headline,
             Body, Caption – mit spezifischen Font-Weights und Letter-Spacings.
           </Typography>
-          <Image
+          <StyledImage
             src={Farbschema}
             alt="Typografie-System"
-            style={{ marginTop: '1rem' }}
+            onClick={() => openLightbox(Farbschema)}
           />
-          <Image
+          <StyledImage
             src={ColorGrid}
             alt="Farbsystem-Flavours"
-            style={{ marginTop: '1.5rem' }}
+            onClick={() => openLightbox(ColorGrid)}
           />
         </Section>
 
@@ -91,14 +88,18 @@ const CaseStudyUXProcessScreen = () => {
             passenden kulturellen Background, der das visuelle Narrativ
             abrundet.
           </Typography>
-          <Image
+          <StyledImage
             src={PrototypePreview}
             alt="Figma-Prototyp Vorschau"
-            style={{ marginTop: '1rem' }}
+            onClick={() => openLightbox(PrototypePreview)}
           />
         </Section>
-      </Content>
-    </Wrapper>
+      </Wrapper>
+
+      {lightbox.open && (
+        <Lightbox src={lightbox.src} alt="Zoom View" onClose={closeLightbox} />
+      )}
+    </PageWrapper>
   )
 }
 

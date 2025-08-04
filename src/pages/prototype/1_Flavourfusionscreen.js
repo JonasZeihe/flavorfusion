@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BackgroundImage from '../../assets/images/backgrounds/BackgroundFlavourFusion.png'
-import Logo from '../../assets/images/logo/logo.png'
-import LogoText from '../../assets/images/logo/logotext.png'
+import LogoText from '../../assets/images/logo/LogoRound.png'
 import Button from '../../components/Button'
 
 const ScreenWrapper = styled.div`
@@ -26,12 +25,6 @@ const LogoContainer = styled.div`
   justify-content: center;
   margin-bottom: 2rem;
   z-index: 2;
-`
-
-const LogoImage = styled.img`
-  width: 20rem; /* Größe des Hauptlogos */
-  height: auto;
-  object-fit: contain;
 `
 
 const LogoTextImage = styled.img`
@@ -68,7 +61,6 @@ const Prototype1FlavourFusionScreen = () => {
   return (
     <ScreenWrapper>
       <LogoContainer>
-        <LogoImage src={Logo} alt="Flavor Fusion Logo" />
         <LogoTextImage src={LogoText} alt="Flavor Fusion Text Logo" />
       </LogoContainer>
       <CTAButtonWrapper>

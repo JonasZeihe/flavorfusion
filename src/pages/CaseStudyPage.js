@@ -1,10 +1,10 @@
-import CaseStudyHeroScreen from './casestudy/CaseStudyHeroScreen'
-import CaseStudyOverviewScreen from './casestudy/CaseStudyOverviewScreen'
-import CaseStudyDiscoveryScreen from './casestudy/CaseStudyDiscoveryScreen'
-import CaseStudyUXProcessScreen from './casestudy/CaseStudyUXProcessScreen'
-import CaseStudyFinalDesignScreen from './casestudy/CaseStudyFinalDesignScreen'
-import CaseStudyImpactScreen from './casestudy/CaseStudyImpactScreen'
-import CaseStudyReflectionScreen from './casestudy/CaseStudyReflectionScreen'
+import CaseStudyHeroScreen from './casestudy/1_HeroScreen'
+import CaseStudyOverviewScreen from './casestudy/2_OverviewScreen'
+import CaseStudyDiscoveryScreen from './casestudy/3_DiscoveryScreen'
+import CaseStudyUXProcessScreen from './casestudy/4_UXProcessScreen'
+import CaseStudyFinalDesignScreen from './casestudy/5_FinalDesignScreen'
+import CaseStudyImpactScreen from './casestudy/6_ImpactScreen'
+import CaseStudyReflectionScreen from './casestudy/7_ReflectionScreen'
 
 const screens = [
   CaseStudyHeroScreen,
